@@ -44,16 +44,6 @@ const Hero: React.FC = () => {
       {/* Content */}
       <div className="relative z-20 max-w-[1400px] mx-auto px-6 md:px-12 w-full pt-28 md:pt-20">
         <div className="max-w-5xl">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex items-center gap-4 mb-8"
-          >
-            <div className="h-[1px] w-12 bg-gold" />
-            <span className="text-gold tracking-[0.3em] text-xs md:text-sm font-bold uppercase">Construction Advisory Excellence</span>
-          </motion.div>
-
           <div className="overflow-hidden mb-8">
             {titleLines.map((line, i) => (
               <div key={i} className="overflow-hidden">
