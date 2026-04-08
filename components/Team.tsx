@@ -29,7 +29,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({ photo, initials, name, role, bi
         <div className="w-full h-full rounded-full overflow-hidden bg-navy flex items-center justify-center shadow-md group-hover:shadow-gold/30 group-hover:scale-105 transition-all duration-500 ring-2 ring-gold/20 group-hover:ring-gold/60">
           {!imgError ? (
             <img
-              src={`/images/${photo}.JPEG`}
+              src={`/images/${photo}.jpeg`}
               alt={name}
               onError={() => setImgError(true)}
               className="w-full h-full object-cover"
