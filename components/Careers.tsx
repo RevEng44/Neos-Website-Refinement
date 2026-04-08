@@ -41,7 +41,7 @@ ${formData.message}`;
   return (
     <section id="careers" className="py-24 bg-navy-light relative overflow-hidden">
       <div className="absolute inset-0 opacity-20">
-        <img src="/images/image%202.png" className="w-full h-full object-cover" alt="Helicopter Operations" />
+        <img src="/images/careers.png" className="w-full h-full object-cover" alt="Helicopter Operations" />
       </div>
       <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/95 to-navy/80" />
 
