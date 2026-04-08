@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
       <motion.div style={{ y, opacity, scale }} className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-navy/90 via-navy/40 to-navy z-10" />
         <img
-          src="/images/image%201.png"
+          src="/images/hero.png"
           alt="Mountain Lake Panorama"
           className="w-full h-full object-cover"
         />

@@ -68,7 +68,7 @@ const About: React.FC = () => {
           <div className="absolute inset-0 bg-gold transform translate-x-4 translate-y-4 rounded-lg" />
           <div className="relative rounded-lg overflow-hidden h-[600px] shadow-2xl">
             <img 
-              src="/images/image%2018.png" 
+              src="/images/about.png"
               alt="Strategic Planning" 
               className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
             />

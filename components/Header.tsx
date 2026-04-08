@@ -79,7 +79,7 @@ const Header: React.FC = () => {
         {/* Logo */}
         <a href="#" className="flex items-center group relative">
           <img 
-            src="/images/image%2020.png" 
+            src="/images/logo.png"
             alt="Neos Advisors Logo" 
             className="h-12 md:h-20 w-auto object-contain transition-all duration-300 p-1" 
           />

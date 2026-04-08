@@ -15,7 +15,7 @@ const CaseStudy: React.FC = () => {
           <div className="grid lg:grid-cols-2">
             <div className="relative h-[250px] md:h-[400px] lg:h-auto">
               <img 
-                src="/images/image%2010.png" 
+                src="/images/tmep.png"
                 alt="Construction Site - Pipeline" 
                 className="absolute inset-0 w-full h-full object-cover"
               />
