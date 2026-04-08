@@ -13,19 +13,15 @@ const Footer: React.FC = () => {
               <span className="font-serif text-xl font-medium tracking-wide">NEOS</span>
             </div>
             <p className="text-white/50 text-sm leading-relaxed">
-              Empowering construction businesses and Indigenous Nations to achieve more than they thought possible.
+              Empowering construction businesses and Nations to achieve more than they thought possible.
             </p>
           </div>
 
           <div>
             <h4 className="font-serif text-lg mb-6 text-gold">Services</h4>
             <ul className="space-y-3 text-sm text-white/70">
-              <li><a href="#services" className="hover:text-gold transition-colors">Capacity Planning</a></li>
-              <li><a href="#services" className="hover:text-gold transition-colors">Commercial Advisory</a></li>
-              <li><a href="#services" className="hover:text-gold transition-colors">Project Execution</a></li>
-              <li><a href="#services" className="hover:text-gold transition-colors">Project Pursuits</a></li>
-              <li><a href="#services" className="hover:text-gold transition-colors">Business Development</a></li>
-              <li><a href="#services" className="hover:text-gold transition-colors">Indigenous Relations</a></li>
+              <li><a href="#services" className="hover:text-gold transition-colors">Advisement & Capacity Planning</a></li>
+              <li><a href="#services" className="hover:text-gold transition-colors">Indigenous Engagement & Business Development</a></li>
             </ul>
           </div>
 
@@ -34,7 +30,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-3 text-sm text-white/70">
               <li><a href="#about" className="hover:text-gold transition-colors">About Us</a></li>
               <li><a href="#team" className="hover:text-gold transition-colors">Our Team</a></li>
-              <li><a href="#case-study" className="hover:text-gold transition-colors">Case Studies</a></li>
+              <li><a href="#case-study" className="hover:text-gold transition-colors">Results</a></li>
               <li><a href="#careers" className="hover:text-gold transition-colors">Careers</a></li>
             </ul>
           </div>

@@ -29,7 +29,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({ photo, initials, name, role, bi
         <div className="w-full h-full rounded-full overflow-hidden bg-navy flex items-center justify-center shadow-md group-hover:shadow-gold/30 group-hover:scale-105 transition-all duration-500 ring-2 ring-gold/20 group-hover:ring-gold/60">
           {!imgError ? (
             <img
-              src={`/images/${photo}.jpeg`}
+              src={`/images/${photo}`}
               alt={name}
               onError={() => setImgError(true)}
               className="w-full h-full object-cover"
@@ -68,7 +68,7 @@ const Team: React.FC = () => {
           </h2>
           <div className="space-y-5 text-lg text-navy-light/80 leading-relaxed">
             <p>
-              Led by professional engineers with direct project experience on major Canadian pipelines. We provide strategic advisory from a field-first perspective — not just a boardroom.
+              Led by professional engineers with direct project experience on major Canadian pipelines. We provide strategic advisory from a field-first perspective, not just a boardroom.
             </p>
             <p>
               Our specialized focus bridges the gap between technical execution and community partnership. We emphasize Indigenous-led partnership capability and full-project lifecycle support.
@@ -86,7 +86,7 @@ const Team: React.FC = () => {
         {/* Executive Leadership Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 mx-auto">
           <TeamMember
-            photo="stavros-salmas"
+            photo="stavros-salmas.jpeg"
             initials="SS"
             name="Stavros Salmas, P.Eng."
             role="Chief Executive Officer"
@@ -94,7 +94,7 @@ const Team: React.FC = () => {
             delay={0}
           />
           <TeamMember
-            photo="anthony-delmastro"
+            photo="anthony-delmastro.jpg"
             initials="AD"
             name="Anthony Del Mastro, P.Eng."
             role="Chief Operating Officer"
@@ -102,7 +102,7 @@ const Team: React.FC = () => {
             delay={0.1}
           />
           <TeamMember
-            photo="christos-salmas"
+            photo="christos-salmas.jpeg"
             initials="CS"
             name="Christos Salmas, P.Eng."
             role="Chief Financial Officer"
@@ -120,7 +120,7 @@ const Team: React.FC = () => {
         <div className="flex justify-center">
           <div className="w-full max-w-sm">
             <TeamMember
-              photo="taylor-mcleod"
+              photo="taylor-mcleod.jpeg"
               initials="TM"
               name="Taylor McLeod"
               role="Indigenous Engagement Manager"

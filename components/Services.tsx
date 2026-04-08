@@ -36,6 +36,16 @@ const categories: Category[] = [
       'Strategic construction advisory, project controls, resource planning, and brand development tailored for linear infrastructure and large-scale industrial builds.',
     subServices: [
       {
+        icon: FileCheck,
+        title: 'Project Pursuits',
+        desc: 'Estimates, tender management, prequalification, and certification support to secure new work.',
+      },
+      {
+        icon: Hammer,
+        title: 'Project Execution',
+        desc: 'Construction management, cost control, and field supervision. Hands-on expertise for operational excellence from start to finish.',
+      },
+      {
         icon: BarChart3,
         title: 'Capacity Planning',
         desc: 'Readiness evaluations, capacity assessments, and infrastructure planning to build actionable roadmaps for scalable growth.',
@@ -46,29 +56,24 @@ const categories: Category[] = [
         desc: 'Contract negotiation, rate development, and risk management to protect interests and position for growth.',
       },
       {
-        icon: Hammer,
-        title: 'Project Execution',
-        desc: 'Construction management, cost control, and field supervision — hands-on expertise for operational excellence from start to finish.',
-      },
-      {
-        icon: FileCheck,
-        title: 'Project Pursuits',
-        desc: 'Estimates, tender management, prequalification, and certification support to secure new work.',
-      },
-      {
         icon: Palette,
-        title: 'Website & Branding Development',
-        desc: 'Professional website design, logo and visual identity creation, and brochures, company profiles & presentation materials that command respect in the marketplace.',
+        title: 'Website & Branding',
+        desc: 'Professional website design, logo and visual identity creation, and brochures, company profiles and presentation materials that command respect in the marketplace.',
       },
     ],
   },
   {
     icon: Handshake,
     title: 'Indigenous Engagement & Business Development',
-    tagline: 'Partnership, participation & shared value',
+    tagline: 'Partnership development for larger project opportunities',
     description:
-      'Benefit agreement strategy, project participation, and lasting partnership development for Indigenous Nations and industry stakeholders.',
+      'We build meaningful partnerships between Indigenous Nations and industry, unlocking access, participation, and leverage on larger-scale infrastructure and industrial projects.',
     subServices: [
+      {
+        icon: Handshake,
+        title: 'Partnership Development',
+        desc: 'Structured joint ventures and strategic alignments designed to position Nations and contractors for major project opportunities.',
+      },
       {
         icon: Users,
         title: 'Meaningful Consultation Support',
@@ -77,12 +82,7 @@ const categories: Category[] = [
       {
         icon: BarChart3,
         title: 'Business Capacity Building',
-        desc: 'Structured development of Indigenous enterprises — readiness, systems, and leadership to compete and win.',
-      },
-      {
-        icon: Handshake,
-        title: 'Shared Value Agreement Logic',
-        desc: 'Benefit agreements and participation structures designed to deliver real, measurable value to all parties.',
+        desc: 'Structured development of Indigenous enterprises. Readiness, systems, and leadership to compete and win.',
       },
       {
         icon: Briefcase,
@@ -120,8 +120,8 @@ const Services: React.FC = () => {
           </p>
         </div>
 
-        {/* Category Cards */}
-        <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-start">
+        {/* Category Cards - stacked full width so sub-services can spread horizontally */}
+        <div className="flex flex-col gap-6 md:gap-8">
           {categories.map((category, idx) => {
             const isActive = activeIndex === idx;
             return (
@@ -145,42 +145,47 @@ const Services: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-white/[0.04] to-transparent pointer-events-none" />
 
                 <motion.div layout="position" className="relative z-10 p-8 md:p-12">
-                  {/* Icon */}
-                  <div
-                    className={`
-                      w-16 h-16 md:w-20 md:h-20 rounded-2xl border flex items-center justify-center mb-8
-                      transition-all duration-500
-                      ${isActive
-                        ? 'bg-gold text-navy border-gold shadow-lg shadow-gold/20 scale-105'
-                        : 'bg-white/5 text-gold border-white/10'}
-                    `}
-                  >
-                    <category.icon size={36} strokeWidth={1.5} />
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="font-serif text-3xl md:text-4xl text-white leading-tight mb-3 group-hover:text-gold transition-colors duration-300">
-                    {category.title}
-                  </h3>
-                  <p className="text-gold/80 text-xs md:text-sm font-semibold uppercase tracking-[0.15em] mb-6">
-                    {category.tagline}
-                  </p>
-                  <p className="text-white/70 text-base md:text-lg leading-relaxed mb-2">
-                    {category.description}
-                  </p>
-
-                  {/* Hint pill */}
-                  <div className="mt-8 flex items-center gap-3 text-gold/80 text-xs font-bold uppercase tracking-widest">
-                    <span>{isActive ? 'Explore below' : 'Hover to expand'}</span>
-                    <motion.div
-                      animate={{ rotate: isActive ? 90 : 0 }}
-                      transition={{ duration: 0.4 }}
+                  {/* Top header row: icon + title/tagline/description + hint */}
+                  <div className="flex flex-col lg:flex-row lg:items-start lg:gap-10">
+                    {/* Icon */}
+                    <div
+                      className={`
+                        shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-2xl border flex items-center justify-center mb-6 lg:mb-0
+                        transition-all duration-500
+                        ${isActive
+                          ? 'bg-gold text-navy border-gold shadow-lg shadow-gold/20 scale-105'
+                          : 'bg-white/5 text-gold border-white/10'}
+                      `}
                     >
-                      <ArrowUpRight size={16} />
-                    </motion.div>
+                      <category.icon size={36} strokeWidth={1.5} />
+                    </div>
+
+                    {/* Title + tagline + description */}
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-serif text-3xl md:text-4xl text-white leading-tight mb-2 group-hover:text-gold transition-colors duration-300">
+                        {category.title}
+                      </h3>
+                      <p className="text-gold/80 text-xs md:text-sm font-semibold uppercase tracking-[0.15em] mb-4">
+                        {category.tagline}
+                      </p>
+                      <p className="text-white/70 text-base md:text-lg leading-relaxed max-w-4xl">
+                        {category.description}
+                      </p>
+                    </div>
+
+                    {/* Hint pill */}
+                    <div className="shrink-0 mt-6 lg:mt-2 flex items-center gap-3 text-gold/80 text-xs font-bold uppercase tracking-widest">
+                      <span>{isActive ? 'Showing all' : 'Hover to expand'}</span>
+                      <motion.div
+                        animate={{ rotate: isActive ? 90 : 0 }}
+                        transition={{ duration: 0.4 }}
+                      >
+                        <ArrowUpRight size={16} />
+                      </motion.div>
+                    </div>
                   </div>
 
-                  {/* Expanding sub-services */}
+                  {/* Expanding sub-services - horizontal grid */}
                   <AnimatePresence initial={false}>
                     {isActive && (
                       <motion.div
@@ -195,7 +200,7 @@ const Services: React.FC = () => {
                         className="overflow-hidden"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        <div className="mt-10 pt-8 border-t border-gold/15 space-y-6">
+                        <div className="mt-10 pt-8 border-t border-gold/15 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
                           {category.subServices.map((sub, i) => (
                             <motion.div
                               key={i}
@@ -203,22 +208,20 @@ const Services: React.FC = () => {
                               animate={{ opacity: 1, y: 0 }}
                               transition={{
                                 duration: 0.4,
-                                delay: 0.15 + i * 0.07,
+                                delay: 0.15 + i * 0.06,
                                 ease: [0.22, 1, 0.36, 1],
                               }}
-                              className="flex gap-4 group/item"
+                              className="group/item"
                             >
-                              <div className="shrink-0 w-11 h-11 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold group-hover/item:bg-gold group-hover/item:text-navy transition-all duration-300">
+                              <div className="w-11 h-11 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold group-hover/item:bg-gold group-hover/item:text-navy transition-all duration-300 mb-4">
                                 <sub.icon size={20} strokeWidth={1.75} />
                               </div>
-                              <div className="flex-1">
-                                <h4 className="font-serif text-xl text-white mb-1.5 group-hover/item:text-gold transition-colors">
-                                  {sub.title}
-                                </h4>
-                                <p className="text-white/60 text-sm md:text-base leading-relaxed">
-                                  {sub.desc}
-                                </p>
-                              </div>
+                              <h4 className="font-serif text-xl text-white mb-2 group-hover/item:text-gold transition-colors">
+                                {sub.title}
+                              </h4>
+                              <p className="text-white/60 text-sm leading-relaxed">
+                                {sub.desc}
+                              </p>
                             </motion.div>
                           ))}
                         </div>
