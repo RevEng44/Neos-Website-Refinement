@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, MapPin } from 'lucide-react';
+import { Mail, MapPin, Linkedin } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -46,6 +46,10 @@ const Footer: React.FC = () => {
                 <MapPin size={18} />
                 Western Canada
               </div>
+              <a href="https://www.linkedin.com/company/neos-advisors-ltd/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-white/70 hover:text-gold transition-colors">
+                <Linkedin size={18} />
+                LinkedIn
+              </a>
             </div>
           </div>
         </div>
