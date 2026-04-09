@@ -79,7 +79,7 @@ const Careers: React.FC = () => {
                 <h3 className="font-serif text-2xl text-white mb-2">Apply Now</h3>
                 <p className="text-white/50 text-sm mb-8">Submit your application and join our team.</p>
 
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-4" encType="multipart/form-data">
                   {/* FormSubmit config */}
                   <input type="hidden" name="_subject" value="New Career Application - Neos Advisors" />
                   <input type="hidden" name="_template" value="table" />
@@ -142,6 +142,17 @@ const Careers: React.FC = () => {
                       placeholder="Tell us about yourself..."
                       required
                     ></textarea>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs uppercase tracking-wider text-gold mb-2">Resume</label>
+                    <input
+                      type="file"
+                      name="attachment"
+                      accept=".pdf,.doc,.docx"
+                      className="w-full bg-navy/50 border border-white/10 rounded p-3 text-white/70 file:mr-4 file:py-1.5 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-gold/20 file:text-gold hover:file:bg-gold/30 file:cursor-pointer focus:border-gold focus:outline-none transition-colors"
+                    />
+                    <p className="text-white/40 text-xs mt-1.5">PDF, DOC, or DOCX (optional)</p>
                   </div>
 
                   <button
