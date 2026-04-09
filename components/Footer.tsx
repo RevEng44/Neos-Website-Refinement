@@ -53,8 +53,8 @@ const Footer: React.FC = () => {
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/30 text-xs">© 2024 Neos Advisors Ltd. All rights reserved.</p>
           <div className="flex gap-6 text-xs text-white/30">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="https://www.termsfeed.com/live/b2ea6738-7881-4185-8100-8270a442cc4b" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="https://www.termsfeed.com/live/89b9d8c6-13d5-4b11-b8f6-e5bfbcc25808" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>

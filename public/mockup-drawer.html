@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Neos — Drawer Mockup</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: { DEFAULT:'#0a1628', light:'#152238', medium:'#1a2d4a', dark:'#050b14' },
+          gold: { DEFAULT:'#c9a962', light:'#dfc078', dark:'#b08f4a' },
+          cream:'#faf9f7'
+        },
+        fontFamily: {
+          sans: ['DM Sans','sans-serif'],
+          serif: ['Playfair Display','serif'],
+        }
+      }
+    }
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'DM Sans', sans-serif; }
+  .serif { font-family: 'Playfair Display', serif; }
+
+  /* Card-group hover drives drawer */
+  .svc-card { position: relative; }
+  .svc-drawer {
+    position: absolute;
+    top: 0;
+    width: 440px;
+    max-width: 90vw;
+    height: 100%;
+    padding: 2rem;
+    background: rgba(10, 22, 40, 0.92);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(201, 169, 98, 0.35);
+    border-radius: 1.5rem;
+    box-shadow: 0 30px 60px -15px rgba(0,0,0,0.7), 0 0 40px rgba(201,169,98,0.15);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 30;
+    overflow-y: auto;
+  }
+  /* Left card drawer slides to right */
+  .svc-card.left .svc-drawer {
+    left: 100%;
+    transform: translateX(-30px);
+    margin-left: 1rem;
+  }
+  .svc-card.left:hover .svc-drawer {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+  /* Right card drawer slides to left */
+  .svc-card.right .svc-drawer {
+    right: 100%;
+    transform: translateX(30px);
+    margin-right: 1rem;
+  }
+  .svc-card.right:hover .svc-drawer {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+  /* Dim the OTHER card when hovering */
+  .svc-grid:has(.svc-card.left:hover) .svc-card.right,
+  .svc-grid:has(.svc-card.right:hover) .svc-card.left {
+    opacity: 0.35;
+    transform: scale(0.98);
+  }
+  .svc-card { transition: opacity 0.4s, transform 0.4s; }
+
+  /* Active card accent */
+  .svc-card:hover > .card-body {
+    border-color: rgba(201,169,98,0.5);
+    background: rgba(26,45,74,0.7);
+  }
+
+  /* Sub-item stagger */
+  .sub-item {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  .svc-card:hover .sub-item { opacity: 1; transform: translateY(0); }
+  .svc-card:hover .sub-item:nth-child(1) { transition-delay: 0.08s; }
+  .svc-card:hover .sub-item:nth-child(2) { transition-delay: 0.14s; }
+  .svc-card:hover .sub-item:nth-child(3) { transition-delay: 0.20s; }
+  .svc-card:hover .sub-item:nth-child(4) { transition-delay: 0.26s; }
+  .svc-card:hover .sub-item:nth-child(5) { transition-delay: 0.32s; }
+
+  /* Background ambience */
+  .bg-glow-1 { position: absolute; top: -10%; right: 20%; width: 700px; height: 700px; background: rgba(201,169,98,0.05); border-radius: 9999px; filter: blur(120px); }
+  .bg-glow-2 { position: absolute; bottom: -10%; left: 5%; width: 600px; height: 600px; background: rgba(21,34,56,0.4); border-radius: 9999px; filter: blur(100px); }
+</style>
+</head>
+<body class="bg-navy text-white">
+
+<section class="relative min-h-screen py-24 md:py-32 overflow-visible">
+  <div class="bg-glow-1"></div>
+  <div class="bg-glow-2"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6 md:px-12">
+    <div class="mb-14 md:mb-20 max-w-3xl">
+      <span class="text-gold tracking-[0.2em] text-sm font-semibold uppercase block mb-4">Our Expertise — Drawer Mockup</span>
+      <h2 class="serif text-4xl md:text-6xl lg:text-7xl leading-[1.1] mb-6">
+        Comprehensive advisory <span class="italic text-white/50">solutions.</span>
+      </h2>
+      <p class="text-white/60 text-lg md:text-xl leading-relaxed border-l border-gold/30 pl-6">
+        Hover either category to see the pop-out drawer slide in from the side.
+      </p>
+    </div>
+
+    <div class="svc-grid grid md:grid-cols-2 gap-8 relative">
+
+      <!-- LEFT CARD -->
+      <div class="svc-card left">
+        <div class="card-body relative rounded-3xl border border-white/10 bg-navy-light/30 backdrop-blur-xl p-10 transition-all duration-500 cursor-pointer h-full">
+          <div class="w-20 h-20 rounded-2xl border border-white/10 bg-white/5 text-gold flex items-center justify-center mb-8">
+            <!-- Compass icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          </div>
+          <h3 class="serif text-3xl md:text-4xl mb-2 leading-tight">Advisement & Capacity Planning</h3>
+          <p class="text-gold/80 text-xs md:text-sm font-semibold uppercase tracking-[0.15em] mb-4">Strategy, execution & brand credibility</p>
+          <p class="text-white/70 text-base md:text-lg leading-relaxed">
+            Strategic construction advisory, project controls, resource planning, and brand development tailored for linear infrastructure and large-scale industrial builds.
+          </p>
+          <div class="mt-8 flex items-center gap-3 text-gold/80 text-xs font-bold uppercase tracking-widest">
+            <span>Hover for details</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </div>
+        </div>
+
+        <!-- Drawer -->
+        <div class="svc-drawer">
+          <div class="text-gold text-xs font-bold uppercase tracking-[0.2em] mb-6 border-b border-gold/20 pb-4">Sub-Services</div>
+          <div class="space-y-5">
+            <div class="sub-item flex gap-4">
+              <div class="shrink-0 w-10 h-10 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M9 11h6M9 15h6M9 7h6M5 5v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7l-5-5H7a2 2 0 0 0-2 2z"/></svg>
+              </div>
+              <div>
+                <h4 class="serif text-lg mb-1">Project Pursuits</h4>
+                <p class="text-white/60 text-sm leading-snug">Estimates, tender management, prequalification, and certification support to secure new work.</p>
+              </div>
+            </div>
+            <div class="sub-item flex gap-4">
+              <div class="shrink-0 w-10 h-10 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="m15 12-8.5 8.5a2.12 2.12 0 1 1-3-3L12 9"/><path d="m17.64 15 3.3-3.3a1 1 0 0 0 0-1.41l-1.18-1.17a1 1 0 0 0-1.4 0l-3.3 3.3"/></svg>
+              </div>
+              <div>
+                <h4 class="serif text-lg mb-1">Project Execution</h4>
+                <p class="text-white/60 text-sm leading-snug">Construction management, cost control, and field supervision.</p>
+              </div>
+            </div>
+            <div class="sub-item flex gap-4">
+              <div class="shrink-0 w-10 h-10 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M3 3v18h18"/><path d="M7 16V9M12 16v-5M17 16v-9"/></svg>
+              </div>
+              <div>
+                <h4 class="serif text-lg mb-1">Capacity Planning</h4>
+                <p class="text-white/60 text-sm leading-snug">Readiness evaluations, capacity assessments, and infrastructure planning.</p>
+              </div>
+            </div>
+            <div class="sub-item flex gap-4">
+              <div class="shrink-0 w-10 h-10 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <h4 class="serif text-lg mb-1">Commercial Advisory</h4>
+                <p class="text-white/60 text-sm leading-snug">Contract negotiation, rate development, and risk management.</p>
+              </div>
+            </div>
+            <div class="sub-item flex gap-4">
+              <div class="shrink-0 w-10 h-10 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+              </div>
+              <div>
+                <h4 class="serif text-lg mb-1">Website & Branding</h4>
+                <p class="text-white/60 text-sm leading-snug">Professional website design, logo and identity, and marketing materials.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT CARD -->
+      <div class="svc-card right">
+        <div class="card-body relative rounded-3xl border border-white/10 bg-navy-light/30 backdrop-blur-xl p-10 transition-all duration-500 cursor-pointer h-full">
+          <div class="w-20 h-20 rounded-2xl border border-white/10 bg-white/5 text-gold flex items-center justify-center mb-8">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>
+          </div>
+          <h3 class="serif text-3xl md:text-4xl mb-2 leading-tight">Indigenous Engagement & Business Development</h3>
+          <p class="text-gold/80 text-xs md:text-sm font-semibold uppercase tracking-[0.15em] mb-4">Partnership development for larger project opportunities</p>
+          <p class="text-white/70 text-base md:text-lg leading-relaxed">
+            We build meaningful partnerships between Indigenous Nations and industry, unlocking access, participation, and leverage on larger-scale infrastructure and industrial projects.
+          </p>
+          <div class="mt-8 flex items-center gap-3 text-gold/80 text-xs font-bold uppercase tracking-widest">
+            <span>Hover for details</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </div>
+        </div>
+
+        <!-- Drawer -->
+        <div class="svc-drawer">
+          <div class="text-gold text-xs font-bold uppercase tracking-[0.2em] mb-6 border-b border-gold/20 pb-4">Sub-Services</div>
+          <div class="space-y-5">
+            <div class="sub-item flex gap-4">
+              <div class="shrink-0 w-10 h-10 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/></svg>
+              </div>
+              <div>
+                <h4 class="serif text-lg mb-1">Partnership Development</h4>
+                <p class="text-white/60 text-sm leading-snug">Structured joint ventures positioning Nations and contractors for major project opportunities.</p>
+              </div>
+            </div>
+            <div class="sub-item flex gap-4">
+              <div class="shrink-0 w-10 h-10 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div>
+                <h4 class="serif text-lg mb-1">Meaningful Consultation</h4>
+                <p class="text-white/60 text-sm leading-snug">Respectful, informed engagement that honours Nation protocols.</p>
+              </div>
+            </div>
+            <div class="sub-item flex gap-4">
+              <div class="shrink-0 w-10 h-10 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M3 3v18h18"/><path d="M7 16V9M12 16v-5M17 16v-9"/></svg>
+              </div>
+              <div>
+                <h4 class="serif text-lg mb-1">Business Capacity Building</h4>
+                <p class="text-white/60 text-sm leading-snug">Structured development of Indigenous enterprises. Readiness, systems, and leadership.</p>
+              </div>
+            </div>
+            <div class="sub-item flex gap-4">
+              <div class="shrink-0 w-10 h-10 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              </div>
+              <div>
+                <h4 class="serif text-lg mb-1">Business Development</h4>
+                <p class="text-white/60 text-sm leading-snug">Market analysis, opportunity ID, and proposal support.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="mt-16 text-white/40 text-sm text-center">
+      Mockup only — hover each card to see the drawer behaviour.
+    </p>
+  </div>
+</section>
+
+</body>
+</html>
