@@ -102,7 +102,7 @@ const Team: React.FC = () => {
             delay={0.1}
           />
           <TeamMember
-            photo="christos-salmas.jpeg"
+            photo="christos-salmas.jpg"
             initials="CS"
             name="Christos Salmas, P.Eng."
             role="Chief Financial Officer"
