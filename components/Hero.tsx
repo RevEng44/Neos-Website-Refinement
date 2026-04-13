@@ -44,9 +44,9 @@ const Hero: React.FC = () => {
       {/* Content */}
       <div className="relative z-20 max-w-[1400px] mx-auto px-6 md:px-12 w-full pt-28 md:pt-20">
         <div className="max-w-5xl">
-          <div className="overflow-hidden mb-8">
+          <div className="mb-8">
             {titleLines.map((line, i) => (
-              <div key={i} className="overflow-hidden">
+              <div key={i} className="overflow-hidden pb-2">
                 <motion.h1
                   custom={i}
                   initial="hidden"

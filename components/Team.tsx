@@ -90,7 +90,7 @@ const Team: React.FC = () => {
             initials="SS"
             name="Stavros Salmas, P.Eng."
             role="Chief Executive Officer"
-            bio="Stavros leads Neos Advisors as Chief Executive Officer, setting the strategic vision, direction, and leads business growth for the firm. He brings extensive industry expertise to help Indigenous Nations and growing businesses across Western Canada achieve sustainable success in the construction sector."
+            bio="Stavros leads Neos Advisors as Chief Executive Officer, setting the strategic vision, direction, and leads business growth for the firm. He brings extensive industry expertise to help First Nations and growing businesses across Western Canada achieve sustainable success in the construction sector."
             delay={0}
           />
           <TeamMember

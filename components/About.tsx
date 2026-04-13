@@ -24,7 +24,7 @@ const About: React.FC = () => {
 
           <div className="space-y-6 text-lg text-navy-light/80 leading-relaxed">
             <p>
-              At Neos Advisors, we bring clarity, strategy, and direct field experience to every project. As a Canadian advisory and project management firm, we support Indigenous Nations and construction businesses navigating large-scale infrastructure work.
+              At Neos Advisors, we bring clarity, strategy, and direct field experience to every project. As a Canadian advisory and project management firm, we support First Nations and construction businesses navigating large-scale infrastructure work.
             </p>
             <p>
               Whether you're planning capacity, negotiating commercial terms, or building long-term partnerships, Neos delivers the practical expertise to move projects forward.

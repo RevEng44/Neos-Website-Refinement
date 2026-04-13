@@ -67,7 +67,7 @@ const categories: Category[] = [
     title: 'Indigenous Engagement & Business Development',
     tagline: 'Partnership development for larger project opportunities',
     description:
-      'We build meaningful partnerships between Indigenous Nations and industry, unlocking access, participation, and leverage on larger-scale infrastructure and industrial projects.',
+      'We build meaningful partnerships between First Nations and industry, unlocking access, participation, and leverage on larger-scale infrastructure and industrial projects.',
     subServices: [
       {
         icon: Handshake,
@@ -76,8 +76,8 @@ const categories: Category[] = [
       },
       {
         icon: Users,
-        title: 'Meaningful Consultation Support',
-        desc: 'Respectful, informed engagement that honours Nation protocols and creates the foundation for durable relationships.',
+        title: 'Benefit Agreement Development',
+        desc: 'Structuring benefit agreements that deliver meaningful outcomes for Nations and create a clear framework for project participation.',
       },
       {
         icon: BarChart3,
@@ -116,7 +116,7 @@ const Services: React.FC = () => {
             <span className="italic text-white/50">solutions.</span>
           </h2>
           <p className="text-white/60 text-lg md:text-xl leading-relaxed border-l border-gold/30 pl-6">
-            Two focused practices. One elite standard. Hover a category to explore what's inside.
+            Our two divisions deliver comprehensive services to meet every client need. Hover a category to learn more.
           </p>
         </div>
 
@@ -200,7 +200,13 @@ const Services: React.FC = () => {
                         className="overflow-hidden"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        <div className="mt-10 pt-8 border-t border-gold/15 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+                        <div className={`mt-10 pt-8 border-t border-gold/15 grid grid-cols-1 sm:grid-cols-2 gap-6 ${
+                          category.subServices.length === 4
+                            ? 'lg:grid-cols-4'
+                            : category.subServices.length === 5
+                              ? 'lg:grid-cols-3 xl:grid-cols-5'
+                              : `lg:grid-cols-${Math.min(category.subServices.length, 4)}`
+                        }`}>
                           {category.subServices.map((sub, i) => (
                             <motion.div
                               key={i}

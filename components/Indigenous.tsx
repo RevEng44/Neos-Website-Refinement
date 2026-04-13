@@ -21,7 +21,7 @@ const Indigenous: React.FC = () => {
             Building capacity for <br /><span className="text-white/50">self-sustaining success.</span>
           </h2>
           <p className="text-base md:text-lg text-white/70 mb-8 md:mb-10 leading-relaxed max-w-xl">
-            We work closely with Indigenous Nations and entrepreneurs to create long-term, self-sustaining business opportunities. Our approach focuses on meaningful partnerships that deliver lasting economic benefits.
+            We work closely with First Nations and entrepreneurs to create long-term, self-sustaining business opportunities. Our approach focuses on meaningful partnerships that deliver lasting economic benefits.
           </p>
 
           <div className="grid sm:grid-cols-2 gap-4">
