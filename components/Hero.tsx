@@ -46,13 +46,13 @@ const Hero: React.FC = () => {
         <div className="max-w-5xl">
           <div className="mb-8">
             {titleLines.map((line, i) => (
-              <div key={i} className="overflow-hidden pb-2">
+              <div key={i} className="overflow-hidden pb-4 lg:pb-6">
                 <motion.h1
                   custom={i}
                   initial="hidden"
                   animate="visible"
                   variants={textVariants}
-                  className={`font-serif text-5xl md:text-8xl lg:text-[10rem] font-medium leading-[0.9] ${
+                  className={`font-serif text-5xl md:text-8xl lg:text-[10rem] font-medium leading-[1] ${
                     i === 1 ? 'text-transparent bg-clip-text bg-gradient-to-r from-gold via-white to-white italic' : 'text-white'
                   }`}
                 >
