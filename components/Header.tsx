@@ -81,7 +81,7 @@ const Header: React.FC = () => {
           <img 
             src="/images/logo.png"
             alt="Neos Advisors Logo" 
-            className="h-14 md:h-24 w-auto object-contain transition-all duration-300 p-1"
+            className="h-11 md:h-[4.8rem] w-auto object-contain transition-all duration-300 p-1"
           />
         </a>
 

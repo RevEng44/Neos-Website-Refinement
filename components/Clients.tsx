@@ -6,9 +6,7 @@ const clients = [
   { name: "Duz Cho", logo: "/images/duzcho.png" },
   { name: "Spirit Valley Development LP", logo: "/images/spirit-valley.png" },
   { name: "Simpcw Resources Group", logo: "/images/simpcw.png" },
-  { name: "Great Northern Bridgeworks", logo: "/images/gnb.png" },
   { name: "Secwepemcul'ecw Restoration and Stewardship Society", logo: "/images/secwepemc.png" },
-  { name: "DDR", logo: "/images/ddr.png" },
 ];
 
 const Clients: React.FC = () => {

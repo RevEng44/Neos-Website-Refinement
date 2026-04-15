@@ -86,7 +86,7 @@ const Team: React.FC = () => {
         {/* Executive Leadership Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 mx-auto">
           <TeamMember
-            photo="stavros-salmas.jpeg"
+            photo="stavros-salmas.jpg"
             initials="SS"
             name="Stavros Salmas, P.Eng."
             role="Chief Executive Officer"
