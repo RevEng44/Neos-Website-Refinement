@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Neos — Partner Strip Mockup</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: { DEFAULT:'#0a1628', light:'#152238', medium:'#1a2d4a', dark:'#050b14' },
+          gold: { DEFAULT:'#c9a962', light:'#dfc078', dark:'#b08f4a' },
+          cream:'#faf9f7'
+        },
+        fontFamily: {
+          sans: ['DM Sans','sans-serif'],
+          serif: ['Playfair Display','serif'],
+        }
+      }
+    }
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans">
+
+<!-- Simulated About Section -->
+<section class="py-24 md:py-32 bg-cream text-navy relative overflow-hidden">
+  <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/50 to-transparent pointer-events-none"></div>
+
+  <div class="max-w-[1400px] mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-16 items-center">
+    <!-- Left column: text -->
+    <div>
+      <div class="flex items-center gap-4 mb-6">
+        <div class="h-[1px] w-12 bg-gold"></div>
+        <span class="text-gold-dark tracking-[0.2em] text-sm font-bold uppercase">About Neos</span>
+      </div>
+
+      <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-medium mb-8 leading-tight">
+        Strategic partners for <br/><span class="text-gold-dark italic">every project phase</span>
+      </h2>
+
+      <div class="space-y-6 text-lg text-navy-light/80 leading-relaxed">
+        <p>
+          At Neos Advisors, we bring clarity, strategy, and direct field experience to every project. As a Canadian advisory and project management firm, we support First Nations and construction businesses navigating large-scale infrastructure work.
+        </p>
+        <p>
+          Whether you're planning capacity, negotiating commercial terms, or building long-term partnerships, Neos delivers the practical expertise to move projects forward.
+        </p>
+      </div>
+
+      <!-- ===== PARTNER STRIP ===== -->
+      <div class="mt-14 pt-10 border-t border-navy/10">
+        <p class="text-navy/40 text-xs font-semibold uppercase tracking-[0.2em] mb-6">Partnered with contractors across Western Canada</p>
+        <div class="flex items-center gap-8">
+          <div class="h-16 w-36 bg-white rounded-lg shadow-sm border border-gray-100 flex items-center justify-center p-3 hover:shadow-md hover:border-gold/30 transition-all duration-300">
+            <img src="/images/gnb.png" alt="Great Northern Bridgeworks" class="max-h-full max-w-full object-contain" />
+          </div>
+          <div class="h-16 w-36 bg-white rounded-lg shadow-sm border border-gray-100 flex items-center justify-center p-3 hover:shadow-md hover:border-gold/30 transition-all duration-300">
+            <img src="/images/ddr.png" alt="DDR" class="max-h-full max-w-full object-contain" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right column: image placeholder -->
+    <div class="relative">
+      <div class="absolute inset-0 bg-gold transform translate-x-4 translate-y-4 rounded-lg"></div>
+      <div class="relative rounded-lg overflow-hidden h-[600px] shadow-2xl">
+        <img
+          src="/images/about.png"
+          alt="Strategic Planning"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-navy/10"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="bg-cream text-center py-8 text-navy/30 text-sm">
+  Mockup only — showing partner strip placement in the About section
+</div>
+
+</body>
+</html>
