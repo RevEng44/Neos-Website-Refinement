@@ -39,10 +39,7 @@ const Contact: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <div className="flex items-center gap-4 mb-6">
-            <div className="h-[1px] w-12 bg-gold" />
-            <span className="text-gold-dark tracking-[0.2em] text-sm font-bold uppercase">Partner With Neos</span>
-          </div>
+          <span className="text-gold-dark tracking-[0.2em] text-sm font-bold uppercase block mb-4">Partner With Neos</span>
 
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium mb-8 leading-tight">
             Let's build <br /><span className="text-gold-dark italic">something meaningful.</span>

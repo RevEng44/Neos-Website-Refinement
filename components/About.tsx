@@ -13,10 +13,7 @@ const About: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="flex items-center gap-4 mb-6">
-            <div className="h-[1px] w-12 bg-gold" />
-            <span className="text-gold-dark tracking-[0.2em] text-sm font-bold uppercase">About Neos</span>
-          </div>
+          <span className="text-gold-dark tracking-[0.2em] text-sm font-bold uppercase block mb-4">About Neos</span>
 
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium mb-8 leading-tight">
             Strategic partners for <br /><span className="text-gold-dark italic">every project phase</span>
