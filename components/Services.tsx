@@ -16,7 +16,7 @@ import {
 type SubService = {
   icon: React.ElementType;
   title: string;
-  desc: string;
+  desc: React.ReactNode;
 };
 
 type Category = {
@@ -58,7 +58,21 @@ const categories: Category[] = [
       {
         icon: Palette,
         title: 'Website & Branding',
-        desc: 'Professional website design, logo and visual identity creation, and brochures, company profiles and presentation materials that command respect in the marketplace.',
+        desc: (
+          <>
+            Professional website design, logo and visual identity creation, and brochures, company profiles and presentation materials that command respect in the marketplace. Delivered in partnership with{' '}
+            <a
+              href="https://www.spiccostudio.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="text-gold hover:text-gold-light underline underline-offset-2 transition-colors"
+            >
+              Spicco Studio
+            </a>
+            .
+          </>
+        ),
       },
     ],
   },
