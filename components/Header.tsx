@@ -107,7 +107,7 @@ const Header: React.FC = () => {
             );
           })}
           <a
-            href="mailto:info@neosadvisors.ca"
+            href="#contact"
             className="flex items-center gap-2 px-6 py-2.5 bg-gold text-navy hover:bg-white transition-all duration-300 group rounded-sm"
           >
             <span className="text-xs font-black uppercase tracking-tighter">Contact</span>
