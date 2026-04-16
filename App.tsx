@@ -10,6 +10,7 @@ import Clients from './components/Clients';
 import CaseStudy from './components/CaseStudy';
 import Team from './components/Team';
 import Careers from './components/Careers';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Loader from './components/Loader';
 
@@ -41,12 +42,13 @@ const App: React.FC = () => {
           <main>
             <Hero />
             <About />
+            <Clients />
             <Services />
             <Indigenous />
-            <Clients />
             <CaseStudy />
             <Team />
             <Careers />
+            <Contact />
           </main>
           <Footer />
         </motion.div>

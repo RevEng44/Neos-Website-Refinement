@@ -30,32 +30,6 @@ const About: React.FC = () => {
               Whether you're planning capacity, negotiating commercial terms, or building long-term partnerships, Neos delivers the practical expertise to move projects forward.
             </p>
           </div>
-
-          {/* Contractor Partner Strip */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-14 pt-10 border-t border-navy/10"
-          >
-            <p className="text-navy/40 text-xs font-semibold uppercase tracking-[0.2em] mb-6">Partnered with contractors across Western Canada</p>
-            <div className="flex items-center gap-6 flex-wrap">
-              {[
-                { name: 'Great Northern Bridgeworks', logo: '/images/gnb.png' },
-                { name: 'DDR', logo: '/images/ddr.png' },
-                { name: 'Cooper Rentals', logo: '/images/cooper.jpg' },
-                { name: 'ATS', logo: '/images/ats.png' },
-              ].map((partner, idx) => (
-                <div
-                  key={idx}
-                  className="h-16 w-36 bg-white rounded-lg shadow-sm border border-gray-100 flex items-center justify-center p-3 hover:shadow-md hover:border-gold/30 transition-all duration-300"
-                >
-                  <img src={partner.logo} alt={`${partner.name} Logo`} className="max-h-full max-w-full object-contain" />
-                </div>
-              ))}
-            </div>
-          </motion.div>
         </motion.div>
 
         <motion.div
