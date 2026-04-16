@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Check, Mail, MapPin, Handshake } from 'lucide-react';
+import { Check, Mail, MapPin } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -73,15 +73,6 @@ const Contact: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex items-start gap-4">
-              <div className="shrink-0 w-11 h-11 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold-dark">
-                <Handshake size={20} />
-              </div>
-              <div>
-                <p className="text-xs font-bold uppercase tracking-widest text-navy/40 mb-1">Open To</p>
-                <p className="text-navy">Joint ventures, advisory engagements, Nation partnerships</p>
-              </div>
-            </div>
           </div>
         </motion.div>
 
@@ -176,11 +167,8 @@ const Contact: React.FC = () => {
                     name="Inquiry Type"
                     className="w-full bg-cream border border-navy/10 rounded p-3 text-navy focus:border-gold focus:outline-none transition-colors"
                   >
-                    <option>Partnership / Joint Venture</option>
-                    <option>Advisory Engagement</option>
-                    <option>Nation Engagement</option>
-                    <option>Contractor Partnership</option>
-                    <option>General Inquiry</option>
+                    <option>Advisement & Capacity Planning</option>
+                    <option>Indigenous Engagement & Business Development</option>
                   </select>
                 </div>
 
@@ -190,7 +178,7 @@ const Contact: React.FC = () => {
                     name="Message"
                     rows={4}
                     className="w-full bg-cream border border-navy/10 rounded p-3 text-navy focus:border-gold focus:outline-none transition-colors"
-                    placeholder="Tell us a bit about your project or how we can help..."
+                    placeholder="Tell us a bit about your company and how we can help..."
                     required
                   ></textarea>
                 </div>
