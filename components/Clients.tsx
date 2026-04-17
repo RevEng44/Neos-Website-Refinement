@@ -22,7 +22,7 @@ const Clients: React.FC = () => {
       <div className="absolute top-0 right-0 w-20 md:w-48 h-full bg-gradient-to-l from-cream via-cream/95 to-transparent z-20 pointer-events-none" />
 
       <div className="text-center mb-8 md:mb-10 relative z-10">
-        <span className="text-navy/35 tracking-[0.3em] text-xs font-semibold uppercase">Some of our partners</span>
+        <span className="text-navy/35 tracking-[0.3em] text-xs font-semibold uppercase">Some of our industry partners</span>
       </div>
 
       <div className="flex relative z-10">

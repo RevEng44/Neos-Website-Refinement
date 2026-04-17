@@ -166,6 +166,7 @@ const Contact: React.FC = () => {
                   >
                     <option>Advisement & Capacity Planning</option>
                     <option>Indigenous Engagement & Business Development</option>
+                    <option>Other</option>
                   </select>
                 </div>
 
