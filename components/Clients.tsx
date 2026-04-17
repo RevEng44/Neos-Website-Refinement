@@ -10,6 +10,7 @@ const clients = [
   { name: "DDR", logo: "/images/ddr.png" },
   { name: "Cooper Rentals", logo: "/images/cooper.jpg" },
   { name: "ATS", logo: "/images/ats.png" },
+  { name: "3D Line Locating", logo: "/images/3-d-line-locating.png" },
 ];
 
 const Clients: React.FC = () => {
