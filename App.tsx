@@ -42,13 +42,13 @@ const App: React.FC = () => {
           <main>
             <Hero />
             <About />
+            <Contact />
             <Clients />
             <Services />
             <Indigenous />
             <CaseStudy />
             <Team />
             <Careers />
-            <Contact />
           </main>
           <Footer />
         </motion.div>

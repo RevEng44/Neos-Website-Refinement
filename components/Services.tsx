@@ -10,6 +10,10 @@ import {
   Palette,
   Briefcase,
   Users,
+  MessagesSquare,
+  Target,
+  ClipboardList,
+  Megaphone,
   ArrowUpRight,
 } from 'lucide-react';
 
@@ -56,6 +60,11 @@ const categories: Category[] = [
         desc: 'Contract negotiation, rate development, and risk management to protect interests and position for growth.',
       },
       {
+        icon: Handshake,
+        title: 'Benefit Agreement Development',
+        desc: 'Structuring benefit agreements that deliver meaningful outcomes for Nations and create a clear framework for project participation.',
+      },
+      {
         icon: Palette,
         title: 'Website & Branding',
         desc: (
@@ -89,19 +98,29 @@ const categories: Category[] = [
         desc: 'Structured joint ventures and strategic alignments designed to position Nations and contractors for major project opportunities.',
       },
       {
+        icon: MessagesSquare,
+        title: 'Relationships & Outreach',
+        desc: 'Negotiating agreements with Nations, leading engagement throughout the project lifecycle, and attending cultural events with ongoing CRM tracking of every interaction.',
+      },
+      {
+        icon: Target,
+        title: 'Opportunity Development',
+        desc: 'Advising on Indigenous supply chain strategies that create meaningful Nation inclusion in project scope and procurement.',
+      },
+      {
+        icon: FileCheck,
+        title: 'Pursuit Support',
+        desc: 'Ensuring regulatory consultation requirements are completed and securing Nation support for projects through letters of support and media appearances.',
+      },
+      {
         icon: Users,
-        title: 'Benefit Agreement Development',
-        desc: 'Structuring benefit agreements that deliver meaningful outcomes for Nations and create a clear framework for project participation.',
+        title: 'Liaison & Coordination',
+        desc: 'Leading coordination of Indigenous employment, training, and supply chain initiatives across field operations and project delivery.',
       },
       {
-        icon: BarChart3,
-        title: 'Business Capacity Building',
-        desc: 'Structured development of Indigenous enterprises. Readiness, systems, and leadership to compete and win.',
-      },
-      {
-        icon: Briefcase,
-        title: 'Business Development',
-        desc: 'Market analysis, opportunity identification, and proposal support to unlock new streams of work.',
+        icon: ClipboardList,
+        title: 'Pipeline & Reporting',
+        desc: 'Ongoing consultation reporting and engagement tracking that keeps clients informed and ensures commitments translate into measurable action.',
       },
     ],
   },
@@ -219,7 +238,9 @@ const Services: React.FC = () => {
                             ? 'lg:grid-cols-4'
                             : category.subServices.length === 5
                               ? 'lg:grid-cols-3 xl:grid-cols-5'
-                              : `lg:grid-cols-${Math.min(category.subServices.length, 4)}`
+                              : category.subServices.length === 6
+                                ? 'lg:grid-cols-3'
+                                : 'lg:grid-cols-4'
                         }`}>
                           {category.subServices.map((sub, i) => (
                             <motion.div
