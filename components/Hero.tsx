@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8, delay: 1.2 }}
             className="text-lg md:text-2xl text-white/60 max-w-2xl leading-relaxed mb-12"
           >
-            Empowering businesses and Nations to achieve more through strategic planning and efficient execution.
+            <span className="italic text-gold">A new way to build.</span> Neos connects Nations, contractors, and owners around projects that actually work.
           </motion.p>
 
           <motion.div
