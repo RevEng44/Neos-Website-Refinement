@@ -42,8 +42,8 @@ const App: React.FC = () => {
           <main>
             <Hero />
             <About />
-            <Contact />
             <Clients />
+            <Contact />
             <Services />
             <Indigenous />
             <CaseStudy />
