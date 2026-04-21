@@ -37,7 +37,7 @@ const About: React.FC = () => {
           className="relative"
         >
           <div className="absolute inset-0 bg-gold transform translate-x-4 translate-y-4 rounded-lg" />
-          <div className="relative rounded-lg overflow-hidden h-[600px] shadow-2xl">
+          <div className="relative rounded-lg overflow-hidden h-[320px] md:h-[500px] lg:h-[600px] shadow-2xl">
             <img
               src="/images/about.png"
               alt="Strategic Planning"

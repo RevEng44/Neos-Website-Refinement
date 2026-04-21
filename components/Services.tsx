@@ -149,7 +149,7 @@ const Services: React.FC = () => {
             <span className="italic text-white/50">solutions.</span>
           </h2>
           <p className="text-white/60 text-lg md:text-xl leading-relaxed border-l border-gold/30 pl-6">
-            Our two divisions deliver comprehensive services to meet every client need. Hover a category to learn more.
+            Our two divisions deliver comprehensive services to meet every client need. Tap or hover a category to learn more.
           </p>
         </div>
 
@@ -208,7 +208,7 @@ const Services: React.FC = () => {
 
                     {/* Hint pill */}
                     <div className="shrink-0 mt-6 lg:mt-2 flex items-center gap-3 text-gold/80 text-xs font-bold uppercase tracking-widest">
-                      <span>{isActive ? 'Showing all' : 'Hover to expand'}</span>
+                      <span>{isActive ? 'Showing all' : (<><span className="hidden md:inline">Hover</span><span className="md:hidden">Tap</span> to expand</>)}</span>
                       <motion.div
                         animate={{ rotate: isActive ? 90 : 0 }}
                         transition={{ duration: 0.4 }}

@@ -118,9 +118,10 @@ const Header: React.FC = () => {
         {/* Mobile Toggle */}
         <button
           onClick={() => setMenuOpen(true)}
-          className="lg:hidden text-white hover:text-gold transition-colors"
+          aria-label="Open menu"
+          className="lg:hidden text-white hover:text-gold transition-colors p-2 -mr-2"
         >
-          <Menu size={28} />
+          <Menu size={32} />
         </button>
       </div>
 

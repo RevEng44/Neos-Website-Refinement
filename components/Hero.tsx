@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
                   initial="hidden"
                   animate="visible"
                   variants={textVariants}
-                  className={`font-serif text-5xl md:text-8xl lg:text-[10rem] font-medium leading-[1] ${
+                  className={`font-serif text-[2.75rem] sm:text-6xl md:text-8xl lg:text-[10rem] font-medium leading-[1] ${
                     i === 1 ? 'text-transparent bg-clip-text bg-gradient-to-r from-gold via-white to-white italic' : 'text-white'
                   }`}
                 >
@@ -75,18 +75,18 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.4 }}
-            className="flex flex-col sm:flex-row gap-6"
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6"
           >
             <a
               href="mailto:info@neosadvisors.ca"
-              className="px-10 py-5 bg-gold hover:bg-gold-light text-navy font-bold rounded-sm transition-all duration-300 flex items-center justify-center gap-3 group shadow-xl shadow-gold/10"
+              className="px-6 py-4 md:px-10 md:py-5 bg-gold hover:bg-gold-light text-navy font-bold rounded-sm transition-all duration-300 flex items-center justify-center gap-3 group shadow-xl shadow-gold/10"
             >
               Start a Conversation
               <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
             </a>
             <a
               href="#services"
-              className="px-10 py-5 bg-white/5 hover:bg-white/10 backdrop-blur-md border border-white/20 text-white font-medium rounded-sm transition-all duration-300 text-center"
+              className="px-6 py-4 md:px-10 md:py-5 bg-white/5 hover:bg-white/10 backdrop-blur-md border border-white/20 text-white font-medium rounded-sm transition-all duration-300 text-center"
             >
               Explore Services
             </a>

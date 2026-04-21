@@ -85,7 +85,7 @@ const Careers: React.FC = () => {
                   <input type="hidden" name="_template" value="table" />
                   <input type="text" name="_honey" style={{ display: 'none' }} />
 
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs uppercase tracking-wider text-gold mb-2">First Name</label>
                       <input

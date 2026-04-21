@@ -27,7 +27,7 @@ const Clients: React.FC = () => {
 
       <div className="flex relative z-10">
         <motion.div
-          className="flex gap-10 md:gap-16 items-center whitespace-nowrap px-4"
+          className="flex gap-6 md:gap-16 items-center whitespace-nowrap px-4"
           animate={{ x: ["0%", "-50%"] }}
           transition={{
             repeat: Infinity,
