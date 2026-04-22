@@ -165,7 +165,7 @@ const Services: React.FC = () => {
                 onClick={() => setActiveIndex(isActive ? null : idx)}
                 layout
                 className={`
-                  group relative rounded-3xl overflow-hidden cursor-pointer
+                  group relative rounded-3xl overflow-hidden
                   border transition-colors duration-500
                   ${isActive
                     ? 'bg-navy-medium/70 border-gold/40'
