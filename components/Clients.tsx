@@ -2,15 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const clients = [
-  { name: "Duz Cho", logo: "/images/duzcho.png" },
-  { name: "Spirit Valley Development LP", logo: "/images/spirit-valley.png" },
-  { name: "Simpcw Resources Group", logo: "/images/simpcw.png" },
-  { name: "Secwepemcul'ecw Restoration and Stewardship Society", logo: "/images/secwepemc.png" },
-  { name: "Great Northern Bridgeworks", logo: "/images/gnb.png" },
-  { name: "DDR", logo: "/images/ddr.png" },
-  { name: "Cooper Rentals", logo: "/images/cooper.jpg" },
-  { name: "ATS", logo: "/images/ats.png" },
-  { name: "3D Line Locating", logo: "/images/3-d-line-locating.png" },
+  { name: "Duz Cho", logo: "/images/duzcho.png", url: "https://duzcho.com/" },
+  { name: "Spirit Valley Development LP", logo: "/images/spirit-valley.png", url: "https://www.spiritvalley.ca/" },
+  { name: "Simpcw Resources Group", logo: "/images/simpcw.png", url: "https://simpcwresourcesgroup.com/" },
+  { name: "Secwepemcul'ecw Restoration and Stewardship Society", logo: "/images/secwepemc.png", url: "https://srssociety.com/" },
 ];
 
 const Clients: React.FC = () => {
@@ -37,16 +32,30 @@ const Clients: React.FC = () => {
         >
           {/* Repeat list multiple times for seamless loop */}
           {[...clients, ...clients, ...clients].map((client, idx) => {
-            return (
-              <div
+            const inner = (
+              <img
+                src={client.logo}
+                alt={`${client.name} Logo`}
+                className="max-h-full max-w-full object-contain"
+              />
+            );
+
+            const wrapperClass = "flex items-center justify-center p-3 md:p-4 h-16 w-36 md:h-20 md:w-48 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0";
+
+            return client.url ? (
+              <a
                 key={idx}
-                className="flex items-center justify-center p-3 md:p-4 h-16 w-36 md:h-20 md:w-48 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
+                href={client.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${client.name} — visit website`}
+                className={wrapperClass}
               >
-                <img
-                  src={client.logo}
-                  alt={`${client.name} Logo`}
-                  className="max-h-full max-w-full object-contain"
-                />
+                {inner}
+              </a>
+            ) : (
+              <div key={idx} className={wrapperClass}>
+                {inner}
               </div>
             );
           })}
