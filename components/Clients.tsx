@@ -6,6 +6,7 @@ const clients = [
   { name: "Spirit Valley Development LP", logo: "/images/spirit-valley.png", url: "https://www.spiritvalley.ca/" },
   { name: "Simpcw Resources Group", logo: "/images/simpcw.png", url: "https://simpcwresourcesgroup.com/" },
   { name: "Secwepemcul'ecw Restoration and Stewardship Society", logo: "/images/secwepemc.png", url: "https://srssociety.com/" },
+  { name: "DDR", logo: "/images/ddr.png", url: "https://defenderdr.com/" },
 ];
 
 const Clients: React.FC = () => {
