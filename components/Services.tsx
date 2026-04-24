@@ -1,80 +1,98 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import {
-  Compass,
-  Handshake,
-  BarChart3,
-  Shield,
-  Hammer,
-  FileCheck,
-  Palette,
-  Briefcase,
-  Users,
-  MessagesSquare,
-  Target,
-  ClipboardList,
-  Megaphone,
-  ArrowUpRight,
-} from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Plus } from 'lucide-react';
 
 type SubService = {
-  icon: React.ElementType;
   title: string;
   desc: React.ReactNode;
 };
 
 type Category = {
-  icon: React.ElementType;
-  title: string;
-  tagline: string;
+  tag: string;          // "PARTNER EARLY" / "BUILD BETTER"
+  coord: string;        // coordinate label
+  title: React.ReactNode;
   description: string;
   subServices: SubService[];
 };
 
 const categories: Category[] = [
   {
-    icon: Compass,
-    title: 'Advisement & Capacity Planning',
-    tagline: 'Strategy, execution & brand credibility',
+    tag: 'Partner Early',
+    coord: "N 54° 12' W",
+    title: (
+      <>
+        Indigenous<br />Engagement<br />&amp; Business<br />Development
+      </>
+    ),
+    description:
+      'We build meaningful partnerships between First Nations and industry, unlocking access, participation, and leverage on larger-scale infrastructure and industrial projects.',
+    subServices: [
+      {
+        title: 'Partnership Development',
+        desc: 'Structured joint ventures and strategic alignments designed to position Nations and contractors for major project opportunities.',
+      },
+      {
+        title: 'Relationships & Outreach',
+        desc: 'Negotiating agreements with Nations, leading engagement throughout the project lifecycle, and attending cultural events with ongoing CRM tracking.',
+      },
+      {
+        title: 'Opportunity Development',
+        desc: 'Advising on Indigenous supply chain strategies that create meaningful Nation inclusion in project scope and procurement.',
+      },
+      {
+        title: 'Pursuit Support',
+        desc: 'Ensuring regulatory consultation requirements are completed and securing Nation support through letters of support and media appearances.',
+      },
+      {
+        title: 'Liaison & Coordination',
+        desc: 'Leading coordination of Indigenous employment, training, and supply chain initiatives across field operations and project delivery.',
+      },
+      {
+        title: 'Pipeline & Reporting',
+        desc: 'Ongoing consultation reporting and engagement tracking that keeps clients informed and ensures commitments translate into action.',
+      },
+    ],
+  },
+  {
+    tag: 'Build Better',
+    coord: "N 22° 48' E",
+    title: (
+      <>
+        Advisement<br />&amp; Capacity<br />Planning
+      </>
+    ),
     description:
       'Strategic construction advisory, project controls, resource planning, and brand development tailored for linear infrastructure and large-scale industrial builds.',
     subServices: [
       {
-        icon: FileCheck,
         title: 'Project Pursuits',
         desc: 'Estimates, tender management, prequalification, and certification support to secure new work.',
       },
       {
-        icon: Hammer,
         title: 'Project Execution',
-        desc: 'Construction management, cost control, and field supervision. Hands-on expertise for operational excellence from start to finish.',
+        desc: 'Construction management, cost control, and field supervision. Hands-on expertise from start to finish.',
       },
       {
-        icon: BarChart3,
         title: 'Capacity Planning',
         desc: 'Readiness evaluations, capacity assessments, and infrastructure planning to build actionable roadmaps for scalable growth.',
       },
       {
-        icon: Shield,
         title: 'Commercial Advisory',
         desc: 'Contract negotiation, rate development, and risk management to protect interests and position for growth.',
       },
       {
-        icon: Handshake,
         title: 'Benefit Agreement Development',
         desc: 'Structuring benefit agreements that deliver meaningful outcomes for Nations and create a clear framework for project participation.',
       },
       {
-        icon: Palette,
         title: 'Website & Branding',
         desc: (
           <>
-            Professional website design, logo and visual identity creation, and brochures, company profiles and presentation materials that command respect in the marketplace. Delivered in partnership with{' '}
+            Professional websites, visual identity, and presentation materials. Delivered in partnership with{' '}
             <a
               href="https://www.spiccostudio.com"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
               className="text-gold hover:text-gold-light underline underline-offset-2 transition-colors"
             >
               Spicco Studio
@@ -85,50 +103,17 @@ const categories: Category[] = [
       },
     ],
   },
-  {
-    icon: Handshake,
-    title: 'Indigenous Engagement & Business Development',
-    tagline: 'Partnership development for larger project opportunities',
-    description:
-      'We build meaningful partnerships between First Nations and industry, unlocking access, participation, and leverage on larger-scale infrastructure and industrial projects.',
-    subServices: [
-      {
-        icon: Handshake,
-        title: 'Partnership Development',
-        desc: 'Structured joint ventures and strategic alignments designed to position Nations and contractors for major project opportunities.',
-      },
-      {
-        icon: MessagesSquare,
-        title: 'Relationships & Outreach',
-        desc: 'Negotiating agreements with Nations, leading engagement throughout the project lifecycle, and attending cultural events with ongoing CRM tracking of every interaction.',
-      },
-      {
-        icon: Target,
-        title: 'Opportunity Development',
-        desc: 'Advising on Indigenous supply chain strategies that create meaningful Nation inclusion in project scope and procurement.',
-      },
-      {
-        icon: FileCheck,
-        title: 'Pursuit Support',
-        desc: 'Ensuring regulatory consultation requirements are completed and securing Nation support for projects through letters of support and media appearances.',
-      },
-      {
-        icon: Users,
-        title: 'Liaison & Coordination',
-        desc: 'Leading coordination of Indigenous employment, training, and supply chain initiatives across field operations and project delivery.',
-      },
-      {
-        icon: ClipboardList,
-        title: 'Pipeline & Reporting',
-        desc: 'Ongoing consultation reporting and engagement tracking that keeps clients informed and ensures commitments translate into measurable action.',
-      },
-    ],
-  },
 ];
 
-const Services: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+const Crosshair: React.FC = () => (
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" className="text-gold/60">
+    <circle cx="14" cy="14" r="13" stroke="currentColor" strokeWidth="0.6" />
+    <line x1="14" y1="6" x2="14" y2="22" stroke="currentColor" strokeWidth="0.6" />
+    <line x1="6" y1="14" x2="22" y2="14" stroke="currentColor" strokeWidth="0.6" />
+  </svg>
+);
 
+const Services: React.FC = () => {
   return (
     <section id="services" className="bg-navy relative z-10 py-24 md:py-32 overflow-hidden">
       {/* Background ambience */}
@@ -138,141 +123,89 @@ const Services: React.FC = () => {
         <div className="absolute bottom-[-10%] left-[5%] w-[600px] h-[600px] bg-navy-light/40 rounded-full blur-[100px]" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 md:px-12">
+      <div className="relative max-w-[1400px] mx-auto px-6 md:px-12">
         {/* Header */}
-        <div className="mb-14 md:mb-20 max-w-3xl">
-          <span className="text-gold tracking-[0.2em] text-sm font-semibold uppercase block mb-4">
-            Our Expertise
-          </span>
-          <h2 className="font-serif text-4xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-6">
-            Comprehensive advisory{' '}
-            <span className="italic text-white/50">solutions.</span>
+        <div className="text-center mb-14 md:mb-20 max-w-3xl mx-auto">
+          <div className="inline-flex items-center gap-3 mb-6">
+            <span className="w-8 h-px bg-gold/40" />
+            <span className="text-gold tracking-[0.3em] text-xs font-semibold uppercase">Two Divisions</span>
+            <span className="w-8 h-px bg-gold/40" />
+          </div>
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white leading-[1.1] mb-6">
+            Two practices.{' '}
+            <span className="italic text-white/50">One standard.</span>
           </h2>
-          <p className="text-white/60 text-lg md:text-xl leading-relaxed border-l border-gold/30 pl-6">
-            Our two divisions deliver comprehensive services to meet every client need. Tap or hover a category to learn more.
+          <p className="text-white/60 text-lg md:text-xl leading-relaxed">
+            Our two divisions deliver comprehensive services to meet every client need.
           </p>
         </div>
 
-        {/* Category Cards - stacked full width so sub-services can spread horizontally */}
-        <div className="flex flex-col gap-6 md:gap-8">
-          {categories.map((category, idx) => {
-            const isActive = activeIndex === idx;
-            return (
-              <motion.div
-                key={idx}
-                onHoverStart={() => setActiveIndex(idx)}
-                onHoverEnd={() => setActiveIndex(null)}
-                onClick={() => setActiveIndex(isActive ? null : idx)}
-                layout
-                className={`
-                  group relative rounded-3xl overflow-hidden
-                  border transition-colors duration-500
-                  ${isActive
-                    ? 'bg-navy-medium/70 border-gold/40'
-                    : 'bg-navy-light/30 border-white/10 hover:border-gold/20'}
-                  backdrop-blur-xl
-                `}
-                transition={{ layout: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } }}
-              >
-                {/* Glossy overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/[0.04] to-transparent pointer-events-none" />
+        {/* Two-card grid */}
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
+          {categories.map((category, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              className="relative rounded-3xl bg-navy-light/30 border border-white/10 backdrop-blur-xl overflow-hidden"
+            >
+              {/* Glossy overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.04] to-transparent pointer-events-none" />
 
-                <motion.div layout="position" className="relative z-10 p-8 md:p-12">
-                  {/* Top header row: icon + title/tagline/description + hint */}
-                  <div className="flex flex-col lg:flex-row lg:items-start lg:gap-10">
-                    {/* Icon */}
-                    <div
-                      className={`
-                        shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-2xl border flex items-center justify-center mb-6 lg:mb-0
-                        transition-all duration-500
-                        ${isActive
-                          ? 'bg-gold text-navy border-gold shadow-lg shadow-gold/20 scale-105'
-                          : 'bg-white/5 text-gold border-white/10'}
-                      `}
-                    >
-                      <category.icon size={36} strokeWidth={1.5} />
+              <div className="relative p-8 md:p-10 lg:p-12">
+                {/* Top row: coordinate + crosshair */}
+                <div className="flex items-start justify-between mb-8">
+                  <span className="text-gold/50 text-[10px] md:text-xs tracking-[0.25em] uppercase font-mono">
+                    {category.coord}
+                  </span>
+                  <Crosshair />
+                </div>
+
+                {/* Tag pill */}
+                <div className="inline-block border border-gold/40 px-4 py-1.5 mb-6">
+                  <span className="text-gold text-[10px] md:text-xs tracking-[0.25em] uppercase font-semibold">
+                    {category.tag}
+                  </span>
+                </div>
+
+                {/* Title */}
+                <h3 className="font-serif text-4xl md:text-5xl text-white leading-[1.05] mb-6">
+                  {category.title}
+                </h3>
+
+                {/* Gold underline */}
+                <div className="w-16 h-px bg-gold/60 mb-6" />
+
+                {/* Description */}
+                <p className="text-white/70 text-base md:text-lg leading-relaxed mb-10">
+                  {category.description}
+                </p>
+
+                {/* Sub-services list */}
+                <div className="space-y-6 border-t border-white/10 pt-8">
+                  {category.subServices.map((sub, i) => (
+                    <div key={i} className="flex gap-4">
+                      <Plus
+                        size={16}
+                        className="shrink-0 mt-1 text-gold"
+                        strokeWidth={1.75}
+                      />
+                      <div>
+                        <h4 className="font-semibold text-white text-base md:text-lg mb-1">
+                          {sub.title}
+                        </h4>
+                        <p className="text-white/55 text-sm md:text-base leading-relaxed">
+                          {sub.desc}
+                        </p>
+                      </div>
                     </div>
-
-                    {/* Title + tagline + description */}
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-serif text-3xl md:text-4xl text-white leading-tight mb-2 group-hover:text-gold transition-colors duration-300">
-                        {category.title}
-                      </h3>
-                      <p className="text-gold/80 text-xs md:text-sm font-semibold uppercase tracking-[0.15em] mb-4">
-                        {category.tagline}
-                      </p>
-                      <p className="text-white/70 text-base md:text-lg leading-relaxed max-w-4xl">
-                        {category.description}
-                      </p>
-                    </div>
-
-                    {/* Hint pill */}
-                    <div className="shrink-0 mt-6 lg:mt-2 flex items-center gap-3 text-gold/80 text-xs font-bold uppercase tracking-widest">
-                      <span>{isActive ? 'Showing all' : (<><span className="hidden md:inline">Hover</span><span className="md:hidden">Tap</span> to expand</>)}</span>
-                      <motion.div
-                        animate={{ rotate: isActive ? 90 : 0 }}
-                        transition={{ duration: 0.4 }}
-                      >
-                        <ArrowUpRight size={16} />
-                      </motion.div>
-                    </div>
-                  </div>
-
-                  {/* Expanding sub-services - horizontal grid */}
-                  <AnimatePresence initial={false}>
-                    {isActive && (
-                      <motion.div
-                        key="sub"
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{
-                          height: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
-                          opacity: { duration: 0.3, delay: 0.1 },
-                        }}
-                        className="overflow-hidden"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        <div className={`mt-10 pt-8 border-t border-gold/15 grid grid-cols-1 sm:grid-cols-2 gap-6 ${
-                          category.subServices.length === 4
-                            ? 'lg:grid-cols-4'
-                            : category.subServices.length === 5
-                              ? 'lg:grid-cols-3 xl:grid-cols-5'
-                              : category.subServices.length === 6
-                                ? 'lg:grid-cols-3'
-                                : 'lg:grid-cols-4'
-                        }`}>
-                          {category.subServices.map((sub, i) => (
-                            <motion.div
-                              key={i}
-                              initial={{ opacity: 0, y: 15 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{
-                                duration: 0.4,
-                                delay: 0.15 + i * 0.06,
-                                ease: [0.22, 1, 0.36, 1],
-                              }}
-                              className="group/item"
-                            >
-                              <div className="w-11 h-11 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold group-hover/item:bg-gold group-hover/item:text-navy transition-all duration-300 mb-4">
-                                <sub.icon size={20} strokeWidth={1.75} />
-                              </div>
-                              <h4 className="font-serif text-xl text-white mb-2 group-hover/item:text-gold transition-colors">
-                                {sub.title}
-                              </h4>
-                              <p className="text-white/60 text-sm leading-relaxed">
-                                {sub.desc}
-                              </p>
-                            </motion.div>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              </motion.div>
-            );
-          })}
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

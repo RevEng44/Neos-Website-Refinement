@@ -89,24 +89,24 @@ const Team: React.FC = () => {
             photo="stavros-salmas.jpg"
             initials="SS"
             name="Stavros Salmas, P.Eng."
-            role="Chief Executive Officer"
-            bio="Stavros leads Neos Advisors as Chief Executive Officer, setting the strategic vision, direction, and leads business growth for the firm. He brings extensive industry expertise to help First Nations and growing businesses across Western Canada achieve sustainable success in the construction sector."
+            role="Managing Partner"
+            bio="Stavros is a Managing Partner at Neos Advisors, helping set the strategic vision and direction of the firm and driving business growth. He brings extensive industry expertise to help First Nations and growing businesses across Western Canada achieve sustainable success in the construction sector."
             delay={0}
           />
           <TeamMember
             photo="anthony-delmastro.jpg"
             initials="AD"
             name="Anthony Del Mastro, P.Eng."
-            role="Chief Operating Officer"
-            bio="Anthony leads operations at Neos Advisors as Chief Operating Officer, driving project delivery to maximize opportunities for clients. With extensive leadership experience across nearly every facet of pipeline and infrastructure projects, he brings a unique ability to create leverage in commercial negotiations and a proven track record of building and growing businesses sustainably."
+            role="Managing Partner"
+            bio="Anthony is a Managing Partner at Neos Advisors, driving project delivery to maximize opportunities for clients. With extensive leadership experience across nearly every facet of pipeline and infrastructure projects, he brings a unique ability to create leverage in commercial negotiations and a proven track record of building and growing businesses sustainably."
             delay={0.1}
           />
           <TeamMember
             photo="christos-salmas.jpg"
             initials="CS"
             name="Christos Salmas, P.Eng."
-            role="Chief Financial Officer"
-            bio="Chris oversees financial operations at Neos Advisors as Chief Financial Officer, ensuring clients receive sound guidance to navigate complex projects. He's committed to delivering measurable results for construction businesses and Indigenous partners across Western Canada."
+            role="Managing Partner"
+            bio="Chris is a Managing Partner at Neos Advisors, ensuring clients receive sound guidance to navigate complex projects. He's committed to delivering measurable results for construction businesses and First Nations partners across Western Canada."
             delay={0.2}
           />
         </div>
