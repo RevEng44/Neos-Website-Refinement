@@ -149,7 +149,7 @@ const Services: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="relative rounded-3xl bg-navy-light/30 border border-white/10 backdrop-blur-xl overflow-hidden"
+              className="group relative rounded-3xl bg-navy-light/30 border border-white/10 hover:border-gold/45 backdrop-blur-xl overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-gold/5"
             >
               {/* Glossy overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/[0.04] to-transparent pointer-events-none" />
@@ -160,7 +160,9 @@ const Services: React.FC = () => {
                   <span className="text-gold/50 text-[10px] md:text-xs tracking-[0.25em] uppercase font-mono">
                     {category.coord}
                   </span>
-                  <Crosshair />
+                  <div className="transition-transform duration-500 ease-out group-hover:rotate-45">
+                    <Crosshair />
+                  </div>
                 </div>
 
                 {/* Tag pill */}
@@ -184,13 +186,16 @@ const Services: React.FC = () => {
                 </p>
 
                 {/* Sub-services list */}
-                <div className="space-y-6 border-t border-white/10 pt-8">
+                <div>
                   {category.subServices.map((sub, i) => (
-                    <div key={i} className="flex gap-4">
+                    <div
+                      key={i}
+                      className="flex gap-4 px-2 -mx-2 py-3 border-t border-white/5 hover:bg-gold/[0.04] transition-colors duration-300 rounded"
+                    >
                       <Plus
                         size={16}
-                        className="shrink-0 mt-1 text-gold"
-                        strokeWidth={1.75}
+                        className="shrink-0 mt-1 text-gold/70"
+                        strokeWidth={1.5}
                       />
                       <div>
                         <h4 className="font-semibold text-white text-base md:text-lg mb-1">
