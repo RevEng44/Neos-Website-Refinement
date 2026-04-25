@@ -25,31 +25,31 @@ const categories: Category[] = [
       </>
     ),
     description:
-      'We build meaningful partnerships between First Nations and industry, unlocking access, participation, and leverage on larger-scale infrastructure and industrial projects.',
+      'We connect Nations, contractors, and project owners on major infrastructure work, structuring the partnerships and engagement to maximize opportunity and meet project milestones for every party.',
     subServices: [
       {
         title: 'Partnership Development',
-        desc: 'Structured joint ventures and strategic alignments designed to position Nations and contractors for major project opportunities.',
+        desc: 'Commercial partnerships positioning Nations and contractors to secure major project work.',
       },
       {
         title: 'Relationships & Outreach',
-        desc: 'Negotiating agreements with Nations, leading engagement throughout the project lifecycle, and attending cultural events with ongoing CRM tracking.',
+        desc: 'Agreement negotiation, lifecycle engagement, community presence, and CRM tracking.',
       },
       {
         title: 'Opportunity Development',
-        desc: 'Advising on Indigenous supply chain strategies that create meaningful Nation inclusion in project scope and procurement.',
+        desc: 'Scope knowledge that surfaces opportunities others miss, matched to Nation capacity.',
       },
       {
         title: 'Pursuit Support',
-        desc: 'Ensuring regulatory consultation requirements are completed and securing Nation support through letters of support and media appearances.',
+        desc: 'Strategic Nation engagement on competitive pursuits, securing letters of support and partnership commitments that strengthen bids.',
       },
       {
         title: 'Liaison & Coordination',
-        desc: 'Leading coordination of Indigenous employment, training, and supply chain initiatives across field operations and project delivery.',
+        desc: 'Indigenous employment, training, and supply chain coordination from mobilization to close-out.',
       },
       {
         title: 'Pipeline & Reporting',
-        desc: 'Ongoing consultation reporting and engagement tracking that keeps clients informed and ensures commitments translate into action.',
+        desc: 'AI-enabled opportunity logs and engagement tracking, integrated into client growth strategies.',
       },
     ],
   },
@@ -62,33 +62,33 @@ const categories: Category[] = [
       </>
     ),
     description:
-      'Strategic construction advisory, project controls, resource planning, and brand development tailored for linear infrastructure and large-scale industrial builds.',
+      'Pursuit, execution, commercial, and capacity services for Nations, contractors, and owners delivering major capital and infrastructure work.',
     subServices: [
       {
         title: 'Project Pursuits',
-        desc: 'Estimates, tender management, prequalification, and certification support to secure new work.',
+        desc: 'Strategic pursuit planning leveraging our team and project network. Estimating, proposals, tenders, and prequalification to capture new work.',
       },
       {
         title: 'Project Execution',
-        desc: 'Construction management, cost control, and field supervision. Hands-on expertise from start to finish.',
+        desc: 'Construction management, cost control, and field supervision from mobilization through close-out.',
       },
       {
         title: 'Capacity Planning',
-        desc: 'Readiness evaluations, capacity assessments, and infrastructure planning to build actionable roadmaps for scalable growth.',
-      },
-      {
-        title: 'Commercial Advisory',
-        desc: 'Contract negotiation, rate development, and risk management to protect interests and position for growth.',
+        desc: 'Readiness evaluations, capacity assessments, and infrastructure roadmaps for sustainable growth.',
       },
       {
         title: 'Benefit Agreement Development',
-        desc: 'Structuring benefit agreements that deliver meaningful outcomes for Nations and create a clear framework for project participation.',
+        desc: 'Agreements delivering commercial value to Nations and a clear framework for contractors and owners.',
+      },
+      {
+        title: 'Commercial Advisory',
+        desc: 'Contract negotiation, rate development, and risk management on major and complex programs.',
       },
       {
         title: 'Website & Branding',
         desc: (
           <>
-            Professional websites, visual identity, and presentation materials. Delivered in partnership with{' '}
+            Premium websites, identity, and brand systems through our partnership with{' '}
             <a
               href="https://www.spiccostudio.com"
               target="_blank"
