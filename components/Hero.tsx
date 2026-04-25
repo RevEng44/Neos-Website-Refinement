@@ -171,19 +171,19 @@ const Hero: React.FC = () => {
           preserveAspectRatio="xMaxYMid slice"
         >
           {/* Intermediate contours */}
-          <g stroke="rgba(201,169,98,0.17)" strokeWidth="0.65" fill="none" strokeLinecap="round" strokeLinejoin="round">
+          <g stroke="rgba(201,169,98,0.09)" strokeWidth="0.55" fill="none" strokeLinecap="round" strokeLinejoin="round">
             {topoThin.map((d, i) => (
               <path key={`t${i}`} d={d} />
             ))}
           </g>
           {/* Index contours (every 5th elevation, USGS convention) */}
-          <g stroke="rgba(201,169,98,0.32)" strokeWidth="0.95" fill="none" strokeLinecap="round" strokeLinejoin="round">
+          <g stroke="rgba(201,169,98,0.18)" strokeWidth="0.8" fill="none" strokeLinecap="round" strokeLinejoin="round">
             {topoIndex.map((d, i) => (
               <path key={`i${i}`} d={d} />
             ))}
           </g>
           {/* Elevation + station labels */}
-          <g fontFamily="JetBrains Mono, ui-monospace, monospace" fontSize="9" fill="rgba(201,169,98,0.70)" letterSpacing="1">
+          <g fontFamily="JetBrains Mono, ui-monospace, monospace" fontSize="9" fill="rgba(201,169,98,0.45)" letterSpacing="1">
             <text x="540" y="195">1450</text>
             <text x="1080" y="225">1500</text>
             <text x="1320" y="290">1400</text>
