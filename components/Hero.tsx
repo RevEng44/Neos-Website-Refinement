@@ -80,7 +80,7 @@ const Hero: React.FC = () => {
         const halo = document.getElementById(pt.halo);
         const dot = document.getElementById(pt.dot);
         const label = document.getElementById(pt.label);
-        const basePulse = 0.7 + Math.sin(pulseT + i * 2) * 0.1;
+        const basePulse = 0.45 + Math.sin(pulseT + i * 2) * 0.07;
         let nearness = 0;
         if (cursor) {
           const dx = cursor.x - pt.x;
@@ -88,13 +88,13 @@ const Hero: React.FC = () => {
           const d = Math.sqrt(dx * dx + dy * dy);
           nearness = Math.max(0, 1 - d / 260);
         }
-        if (ring) ring.setAttribute('opacity', String(Math.min(1, basePulse + nearness * 0.8)));
+        if (ring) ring.setAttribute('opacity', String(Math.min(0.8, basePulse + nearness * 0.45)));
         if (halo) {
-          halo.setAttribute('r', String(28 + nearness * 16));
-          halo.setAttribute('stroke', `rgba(201,169,98,${(0.15 + nearness * 0.35).toFixed(3)})`);
+          halo.setAttribute('r', String(28 + nearness * 12));
+          halo.setAttribute('stroke', `rgba(201,169,98,${(0.10 + nearness * 0.20).toFixed(3)})`);
         }
-        if (dot) dot.setAttribute('r', String(1.6 + nearness * 1.4));
-        if (label) label.setAttribute('opacity', String(Math.min(1, 0.65 + nearness * 0.35)));
+        if (dot) dot.setAttribute('r', String(1.3 + nearness * 1.0));
+        if (label) label.setAttribute('opacity', String(Math.min(0.75, 0.45 + nearness * 0.25)));
       });
 
       LINES.forEach((id, i) => {
@@ -118,14 +118,14 @@ const Hero: React.FC = () => {
           const d = Math.sqrt(dx * dx + dy * dy);
           edgeNear = Math.max(0, 1 - d / 120);
         }
-        line.setAttribute('opacity', (0.2 + edgeNear * 0.6).toFixed(3));
-        line.setAttribute('stroke-width', (0.7 + edgeNear * 0.8).toFixed(2));
+        line.setAttribute('opacity', (0.13 + edgeNear * 0.32).toFixed(3));
+        line.setAttribute('stroke-width', (0.6 + edgeNear * 0.5).toFixed(2));
       });
 
       if (triFill) {
         let inside = false;
         if (cursor) inside = pointInTriangle(cursor, POINTS[0], POINTS[1], POINTS[2]);
-        triFill.setAttribute('opacity', inside ? '0.05' : '0.012');
+        triFill.setAttribute('opacity', inside ? '0.028' : '0.006');
       }
 
       raf = requestAnimationFrame(tick);
@@ -159,7 +159,7 @@ const Hero: React.FC = () => {
   return (
     <section
       ref={containerRef}
-      className="relative h-screen w-full overflow-hidden flex items-center bg-navy pt-24 md:pt-36"
+      className="relative min-h-screen w-full overflow-hidden flex items-center bg-navy pt-28 md:pt-36 pb-24 md:pb-28"
     >
       {/* Triangulation Background */}
       <motion.div style={{ opacity, y }} className="absolute inset-0 z-0">
@@ -208,19 +208,19 @@ const Hero: React.FC = () => {
             id="tri-fill"
             points="820,120 1420,210 1120,430"
             fill="#c9a962"
-            opacity="0.01"
+            opacity="0.006"
             style={{ transition: 'opacity 0.5s ease' }}
           />
 
           <g stroke="#c9a962" fill="none" strokeLinecap="round">
-            <line id="line-a" x1="820" y1="120" x2="1420" y2="210" strokeWidth="0.7" opacity="0.2" style={{ transition: 'opacity 0.4s ease, stroke-width 0.4s ease' }} />
-            <line id="line-b" x1="1420" y1="210" x2="1120" y2="430" strokeWidth="0.7" opacity="0.2" style={{ transition: 'opacity 0.4s ease, stroke-width 0.4s ease' }} />
-            <line id="line-c" x1="1120" y1="430" x2="820" y2="120" strokeWidth="0.7" opacity="0.2" style={{ transition: 'opacity 0.4s ease, stroke-width 0.4s ease' }} />
+            <line id="line-a" x1="820" y1="120" x2="1420" y2="210" strokeWidth="0.6" opacity="0.13" style={{ transition: 'opacity 0.4s ease, stroke-width 0.4s ease' }} />
+            <line id="line-b" x1="1420" y1="210" x2="1120" y2="430" strokeWidth="0.6" opacity="0.13" style={{ transition: 'opacity 0.4s ease, stroke-width 0.4s ease' }} />
+            <line id="line-c" x1="1120" y1="430" x2="820" y2="120" strokeWidth="0.6" opacity="0.13" style={{ transition: 'opacity 0.4s ease, stroke-width 0.4s ease' }} />
           </g>
 
           {/* Centroid */}
-          <text x="1120" y="260" textAnchor="middle" fontFamily="serif" fontStyle="italic" fontSize="11" fill="rgba(201,169,98,0.35)" letterSpacing="0.3">centroid</text>
-          <circle cx="1120" cy="253" r="1" fill="rgba(201,169,98,0.5)" />
+          <text x="1120" y="260" textAnchor="middle" fontFamily="serif" fontStyle="italic" fontSize="11" fill="rgba(201,169,98,0.22)" letterSpacing="0.3">centroid</text>
+          <circle cx="1120" cy="253" r="1" fill="rgba(201,169,98,0.32)" />
         </svg>
       </motion.div>
 
@@ -234,35 +234,35 @@ const Hero: React.FC = () => {
         >
           {/* NATIONS */}
           <g>
-            <circle id="p1-halo" cx="820" cy="120" r="28" fill="none" stroke="rgba(201,169,98,0.25)" strokeWidth="0.5" />
-            <circle id="p1-ring" cx="820" cy="120" r="8" fill="none" stroke="#c9a962" strokeWidth="0.8" opacity="0.7" />
-            <line x1="812" y1="120" x2="828" y2="120" stroke="#c9a962" strokeWidth="0.8" opacity="0.8" />
-            <line x1="820" y1="112" x2="820" y2="128" stroke="#c9a962" strokeWidth="0.8" opacity="0.8" />
+            <circle id="p1-halo" cx="820" cy="120" r="28" fill="none" stroke="rgba(201,169,98,0.15)" strokeWidth="0.5" />
+            <circle id="p1-ring" cx="820" cy="120" r="8" fill="none" stroke="#c9a962" strokeWidth="0.8" opacity="0.5" />
+            <line x1="812" y1="120" x2="828" y2="120" stroke="#c9a962" strokeWidth="0.8" opacity="0.5" />
+            <line x1="820" y1="112" x2="820" y2="128" stroke="#c9a962" strokeWidth="0.8" opacity="0.5" />
             <circle id="p1-dot" cx="820" cy="120" r="1.6" fill="#c9a962" />
-            <text id="p1-label" x="820" y="95" textAnchor="middle" fontFamily="JetBrains Mono, ui-monospace, monospace" fontSize="10" fill="#c9a962" letterSpacing="2.5" opacity="0.75">NATIONS</text>
-            <text x="820" y="82" textAnchor="middle" fontFamily="JetBrains Mono, ui-monospace, monospace" fontSize="6.5" fill="rgba(201,169,98,0.4)" letterSpacing="1.5">N 54° 12&apos; W</text>
+            <text id="p1-label" x="820" y="95" textAnchor="middle" fontFamily="JetBrains Mono, ui-monospace, monospace" fontSize="10" fill="#c9a962" letterSpacing="2.5" opacity="0.5">NATIONS</text>
+            <text x="820" y="82" textAnchor="middle" fontFamily="JetBrains Mono, ui-monospace, monospace" fontSize="6.5" fill="rgba(201,169,98,0.28)" letterSpacing="1.5">N 54° 12&apos; W</text>
           </g>
 
           {/* OWNERS */}
           <g>
-            <circle id="p2-halo" cx="1420" cy="210" r="28" fill="none" stroke="rgba(201,169,98,0.25)" strokeWidth="0.5" />
-            <circle id="p2-ring" cx="1420" cy="210" r="8" fill="none" stroke="#c9a962" strokeWidth="0.8" opacity="0.7" />
-            <line x1="1412" y1="210" x2="1428" y2="210" stroke="#c9a962" strokeWidth="0.8" opacity="0.8" />
-            <line x1="1420" y1="202" x2="1420" y2="218" stroke="#c9a962" strokeWidth="0.8" opacity="0.8" />
+            <circle id="p2-halo" cx="1420" cy="210" r="28" fill="none" stroke="rgba(201,169,98,0.15)" strokeWidth="0.5" />
+            <circle id="p2-ring" cx="1420" cy="210" r="8" fill="none" stroke="#c9a962" strokeWidth="0.8" opacity="0.5" />
+            <line x1="1412" y1="210" x2="1428" y2="210" stroke="#c9a962" strokeWidth="0.8" opacity="0.5" />
+            <line x1="1420" y1="202" x2="1420" y2="218" stroke="#c9a962" strokeWidth="0.8" opacity="0.5" />
             <circle id="p2-dot" cx="1420" cy="210" r="1.6" fill="#c9a962" />
-            <text id="p2-label" x="1420" y="185" textAnchor="middle" fontFamily="JetBrains Mono, ui-monospace, monospace" fontSize="10" fill="#c9a962" letterSpacing="2.5" opacity="0.75">OWNERS</text>
-            <text x="1420" y="172" textAnchor="middle" fontFamily="JetBrains Mono, ui-monospace, monospace" fontSize="6.5" fill="rgba(201,169,98,0.4)" letterSpacing="1.5">N 22° 48&apos; E</text>
+            <text id="p2-label" x="1420" y="185" textAnchor="middle" fontFamily="JetBrains Mono, ui-monospace, monospace" fontSize="10" fill="#c9a962" letterSpacing="2.5" opacity="0.5">OWNERS</text>
+            <text x="1420" y="172" textAnchor="middle" fontFamily="JetBrains Mono, ui-monospace, monospace" fontSize="6.5" fill="rgba(201,169,98,0.28)" letterSpacing="1.5">N 22° 48&apos; E</text>
           </g>
 
           {/* CONTRACTORS */}
           <g>
-            <circle id="p3-halo" cx="1120" cy="430" r="28" fill="none" stroke="rgba(201,169,98,0.25)" strokeWidth="0.5" />
-            <circle id="p3-ring" cx="1120" cy="430" r="8" fill="none" stroke="#c9a962" strokeWidth="0.8" opacity="0.7" />
-            <line x1="1112" y1="430" x2="1128" y2="430" stroke="#c9a962" strokeWidth="0.8" opacity="0.8" />
-            <line x1="1120" y1="422" x2="1120" y2="438" stroke="#c9a962" strokeWidth="0.8" opacity="0.8" />
+            <circle id="p3-halo" cx="1120" cy="430" r="28" fill="none" stroke="rgba(201,169,98,0.15)" strokeWidth="0.5" />
+            <circle id="p3-ring" cx="1120" cy="430" r="8" fill="none" stroke="#c9a962" strokeWidth="0.8" opacity="0.5" />
+            <line x1="1112" y1="430" x2="1128" y2="430" stroke="#c9a962" strokeWidth="0.8" opacity="0.5" />
+            <line x1="1120" y1="422" x2="1120" y2="438" stroke="#c9a962" strokeWidth="0.8" opacity="0.5" />
             <circle id="p3-dot" cx="1120" cy="430" r="1.6" fill="#c9a962" />
-            <text id="p3-label" x="1120" y="458" textAnchor="middle" fontFamily="JetBrains Mono, ui-monospace, monospace" fontSize="10" fill="#c9a962" letterSpacing="2.5" opacity="0.75">CONTRACTORS</text>
-            <text x="1120" y="472" textAnchor="middle" fontFamily="JetBrains Mono, ui-monospace, monospace" fontSize="6.5" fill="rgba(201,169,98,0.4)" letterSpacing="1.5">S 37° 06&apos; W</text>
+            <text id="p3-label" x="1120" y="458" textAnchor="middle" fontFamily="JetBrains Mono, ui-monospace, monospace" fontSize="10" fill="#c9a962" letterSpacing="2.5" opacity="0.5">CONTRACTORS</text>
+            <text x="1120" y="472" textAnchor="middle" fontFamily="JetBrains Mono, ui-monospace, monospace" fontSize="6.5" fill="rgba(201,169,98,0.28)" letterSpacing="1.5">S 37° 06&apos; W</text>
           </g>
         </svg>
       </motion.div>

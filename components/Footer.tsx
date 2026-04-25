@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
               <img src="/images/logo.png" alt="Neos Advisors" className="h-20 w-auto object-contain" />
             </div>
             <p className="text-white/50 text-sm leading-relaxed">
-              Empowering construction businesses and Nations to achieve more than they thought possible.
+              A new way to build. Neos connects Nations, contractors, and owners through strategic planning and efficient execution.
             </p>
           </div>
 
