@@ -194,7 +194,7 @@ const Hero: React.FC = () => {
         </svg>
 
         {/* Left fade gradient for content readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/80 to-transparent pointer-events-none" style={{ backgroundImage: 'linear-gradient(to right, rgba(10,22,40,0.95) 0%, rgba(10,22,40,0.7) 35%, rgba(10,22,40,0.1) 65%, rgba(10,22,40,0) 85%)' }} />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/80 to-transparent pointer-events-none" style={{ backgroundImage: 'linear-gradient(to right, rgba(10,22,40,0.55) 0%, rgba(10,22,40,0.35) 30%, rgba(10,22,40,0.1) 60%, rgba(10,22,40,0) 85%)' }} />
       </motion.div>
 
       {/* Triangle lines + decorations — behind title (line-c can pass through "Early") */}
