@@ -18,7 +18,7 @@ type Category = {
 const categories: Category[] = [
   {
     tag: 'Partner Early',
-    coord: "N 54° 12' W",
+    coord: '',
     title: (
       <>
         Indigenous<br />Engagement<br />&amp; Business<br />Development
@@ -55,7 +55,7 @@ const categories: Category[] = [
   },
   {
     tag: 'Build Better',
-    coord: "N 22° 48' E",
+    coord: '',
     title: (
       <>
         Advisement<br />&amp; Capacity<br />Planning
@@ -132,7 +132,7 @@ const Services: React.FC = () => {
             <span className="w-8 h-px bg-gold/40" />
           </div>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white leading-[1.1] mb-6">
-            Two practices.{' '}
+            Two divisions.{' '}
             <span className="italic text-white/50">One standard.</span>
           </h2>
           <p className="text-white/60 text-lg md:text-xl leading-relaxed">
@@ -155,11 +155,8 @@ const Services: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-white/[0.04] to-transparent pointer-events-none" />
 
               <div className="relative p-8 md:p-10 lg:p-12">
-                {/* Top row: coordinate + crosshair */}
-                <div className="flex items-start justify-between mb-8">
-                  <span className="text-gold/50 text-[10px] md:text-xs tracking-[0.25em] uppercase font-mono">
-                    {category.coord}
-                  </span>
+                {/* Top row: crosshair */}
+                <div className="flex items-start justify-end mb-8">
                   <div className="transition-transform duration-500 ease-out group-hover:rotate-45">
                     <Crosshair />
                   </div>
@@ -173,7 +170,7 @@ const Services: React.FC = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="font-serif text-4xl md:text-5xl text-white leading-[1.05] mb-6">
+                <h3 className="font-semibold text-3xl md:text-4xl text-white leading-[1.15] mb-6">
                   {category.title}
                 </h3>
 

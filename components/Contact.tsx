@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Check, Mail, MapPin } from 'lucide-react';
+import { Check, Mail } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -57,16 +57,6 @@ const Contact: React.FC = () => {
               <div>
                 <p className="text-xs font-bold uppercase tracking-widest text-navy/40 mb-1">Email</p>
                 <a href="mailto:info@neosadvisors.ca" className="text-navy hover:text-gold-dark transition-colors">info@neosadvisors.ca</a>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="shrink-0 w-11 h-11 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold-dark">
-                <MapPin size={20} />
-              </div>
-              <div>
-                <p className="text-xs font-bold uppercase tracking-widest text-navy/40 mb-1">Based In</p>
-                <p className="text-navy">Western Canada</p>
               </div>
             </div>
 

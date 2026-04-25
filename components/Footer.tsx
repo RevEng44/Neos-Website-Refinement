@@ -8,9 +8,8 @@ const Footer: React.FC = () => {
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-6">
-              <img src="/images/logo.png" alt="Neos Advisors Logo" className="w-10 h-10 object-contain rounded bg-white/5 p-1" />
-              <span className="font-serif text-xl font-medium tracking-wide">NEOS</span>
+            <div className="flex items-center mb-6">
+              <img src="/images/logo.png" alt="Neos Advisors" className="h-20 w-auto object-contain" />
             </div>
             <p className="text-white/50 text-sm leading-relaxed">
               Empowering construction businesses and Nations to achieve more than they thought possible.
@@ -44,7 +43,7 @@ const Footer: React.FC = () => {
               </a>
               <div className="flex items-center gap-3 text-sm text-white/70">
                 <MapPin size={18} />
-                Western Canada
+                Edmonton, AB
               </div>
               <a href="https://www.linkedin.com/company/neos-advisors-ltd/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-white/70 hover:text-gold transition-colors">
                 <Linkedin size={18} />
@@ -55,7 +54,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-white/30 text-xs">© 2024 Neos Advisors Ltd. All rights reserved.</p>
+          <p className="text-white/30 text-xs">© 2026 Neos Advisors Ltd. All rights reserved.</p>
           <div className="flex gap-6 text-xs text-white/30">
             <a href="https://www.termsfeed.com/live/b2ea6738-7881-4185-8100-8270a442cc4b" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="https://www.termsfeed.com/live/89b9d8c6-13d5-4b11-b8f6-e5bfbcc25808" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Terms of Service</a>
