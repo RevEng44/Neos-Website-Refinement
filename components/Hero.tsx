@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { topoThin, topoIndex } from './topoPaths';
 
 const Hero: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -163,33 +164,30 @@ const Hero: React.FC = () => {
     >
       {/* Triangulation Background */}
       <motion.div style={{ opacity, y }} className="absolute inset-0 z-0">
-        {/* Topographic contour lines */}
+        {/* Topographic contour map (procedural mountainous heightmap) */}
         <svg
           className="absolute inset-0 w-full h-full pointer-events-none"
           viewBox="0 0 1600 540"
           preserveAspectRatio="xMaxYMid slice"
         >
-          {/* Faint contour layer */}
-          <g stroke="rgba(201,169,98,0.11)" strokeWidth="0.75" fill="none" strokeLinecap="round">
-            <path d="M -50 55 C 250 30, 450 90, 700 65 S 1100 110, 1400 78 S 1700 85, 1800 75" />
-            <path d="M -50 105 C 200 90, 410 150, 660 118 S 1060 160, 1360 125 S 1700 140, 1800 130" />
-            <path d="M -50 220 C 230 200, 430 270, 680 240 S 1080 280, 1380 250 S 1700 265, 1800 255" />
-            <path d="M -50 295 C 260 275, 470 340, 720 310 S 1120 350, 1410 320 S 1700 335, 1800 325" />
-            <path d="M -50 445 C 270 425, 470 490, 730 460 S 1130 495, 1430 470 S 1700 485, 1800 475" />
-            <path d="M -50 510 C 250 495, 450 555, 710 525 S 1100 555, 1400 535 S 1700 555, 1800 545" />
+          {/* Intermediate contours */}
+          <g stroke="rgba(201,169,98,0.11)" strokeWidth="0.6" fill="none" strokeLinecap="round" strokeLinejoin="round">
+            {topoThin.map((d, i) => (
+              <path key={`t${i}`} d={d} />
+            ))}
           </g>
-          {/* Brighter "index" contours every few lines */}
-          <g stroke="rgba(201,169,98,0.20)" strokeWidth="0.9" fill="none" strokeLinecap="round">
-            <path d="M -50 162 C 280 142, 490 200, 730 175 S 1110 215, 1410 180 S 1700 200, 1800 188" />
-            <path d="M -50 375 C 240 360, 440 415, 700 388 S 1090 420, 1390 398 S 1700 415, 1800 402" />
+          {/* Index contours (every 5th elevation, USGS convention) */}
+          <g stroke="rgba(201,169,98,0.22)" strokeWidth="0.9" fill="none" strokeLinecap="round" strokeLinejoin="round">
+            {topoIndex.map((d, i) => (
+              <path key={`i${i}`} d={d} />
+            ))}
           </g>
           {/* Elevation + station labels */}
           <g fontFamily="JetBrains Mono, ui-monospace, monospace" fontSize="9" fill="rgba(201,169,98,0.55)" letterSpacing="1">
-            <text x="118" y="159">1100</text>
-            <text x="1240" y="178">1050</text>
-            <text x="540" y="372">1000</text>
-            <text x="1300" y="392">STA 28+75</text>
-            <text x="380" y="305">STA 14+50</text>
+            <text x="540" y="195">1450</text>
+            <text x="1080" y="225">1500</text>
+            <text x="1320" y="290">1400</text>
+            <text x="380" y="465">1300</text>
           </g>
         </svg>
 
