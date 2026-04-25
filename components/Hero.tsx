@@ -330,16 +330,6 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
-      >
-        <div className="w-[1px] h-12 bg-gradient-to-b from-transparent via-gold/50 to-gold" />
-        <span className="text-white/40 text-[10px] tracking-[0.4em] uppercase">Scroll</span>
-      </motion.div>
     </section>
   );
 };
