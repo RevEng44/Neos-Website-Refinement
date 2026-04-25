@@ -159,7 +159,7 @@ const Hero: React.FC = () => {
   return (
     <section
       ref={containerRef}
-      className="relative h-screen w-full overflow-hidden flex items-center bg-navy"
+      className="relative h-screen w-full overflow-hidden flex items-center bg-navy pt-24 md:pt-36"
     >
       {/* Triangulation Background */}
       <motion.div style={{ opacity, y }} className="absolute inset-0 z-0">
@@ -268,7 +268,7 @@ const Hero: React.FC = () => {
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-20 max-w-[1400px] mx-auto px-6 md:px-12 w-full pt-28 md:pt-20">
+      <div className="relative z-20 max-w-[1400px] mx-auto px-6 md:px-12 w-full">
         <div className="max-w-5xl">
           {/* Eyebrow */}
           <motion.div
