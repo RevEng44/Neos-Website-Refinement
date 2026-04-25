@@ -21,7 +21,7 @@ const categories: Category[] = [
     coord: '',
     title: (
       <>
-        Indigenous<br />Engagement<br />&amp; Business<br />Development
+        Indigenous Engagement<br />&amp; Business Development
       </>
     ),
     description:
@@ -58,7 +58,7 @@ const categories: Category[] = [
     coord: '',
     title: (
       <>
-        Advisement<br />&amp; Capacity<br />Planning
+        Advisement &amp;<br />Capacity Planning
       </>
     ),
     description:
@@ -170,7 +170,7 @@ const Services: React.FC = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="font-semibold text-3xl md:text-4xl text-white leading-[1.15] mb-6">
+                <h3 className="font-semibold text-4xl md:text-5xl lg:text-[3.25rem] text-white leading-[1.15] mb-6">
                   {category.title}
                 </h3>
 
