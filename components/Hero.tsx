@@ -177,15 +177,12 @@ const Hero: React.FC = () => {
           <rect x="0" y="0" width="1600" height="540" fill="url(#gridFine2)" />
         </svg>
 
-        {/* Triangulation SVG — right-anchored, aspect-locked for consistent scaling */}
-        <div
-          className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-[70vw] lg:w-[62vw] xl:w-[58vw] 2xl:w-[52vw] aspect-[1600/540] max-h-[80%] pointer-events-none"
-        >
+        {/* Triangulation SVG — full-bleed, anchored right so triangle sits left-of-edge across viewports */}
         <svg
           ref={svgRef}
           viewBox="0 0 1600 540"
-          preserveAspectRatio="xMidYMid meet"
-          className="w-full h-full pointer-events-none"
+          preserveAspectRatio="xMaxYMid slice"
+          className="hidden md:block absolute inset-0 w-full h-full pointer-events-none"
         >
           <polygon
             id="tri-fill"
@@ -248,7 +245,6 @@ const Hero: React.FC = () => {
           <text x="1120" y="260" textAnchor="middle" fontFamily="serif" fontStyle="italic" fontSize="11" fill="rgba(201,169,98,0.35)" letterSpacing="0.3">centroid</text>
           <circle cx="1120" cy="253" r="1" fill="rgba(201,169,98,0.5)" />
         </svg>
-        </div>
 
         {/* Left fade gradient for content readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/80 to-transparent pointer-events-none" style={{ backgroundImage: 'linear-gradient(to right, rgba(10,22,40,0.95) 0%, rgba(10,22,40,0.7) 35%, rgba(10,22,40,0.1) 65%, rgba(10,22,40,0) 85%)' }} />
