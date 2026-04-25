@@ -181,10 +181,9 @@ const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/80 to-transparent pointer-events-none" style={{ backgroundImage: 'linear-gradient(to right, rgba(10,22,40,0.95) 0%, rgba(10,22,40,0.7) 35%, rgba(10,22,40,0.1) 65%, rgba(10,22,40,0) 85%)' }} />
       </motion.div>
 
-      {/* Triangulation SVG — own layer above title so dots stay visible when they brighten */}
-      <motion.div style={{ opacity, y }} className="hidden md:block absolute inset-0 z-30 pointer-events-none">
+      {/* Triangle lines + decorations — behind title (line-c can pass through "Early") */}
+      <motion.div style={{ opacity, y }} className="hidden md:block absolute inset-0 z-10 pointer-events-none">
         <svg
-          ref={svgRef}
           viewBox="0 0 1600 540"
           preserveAspectRatio="xMaxYMid slice"
           className="absolute inset-0 w-full h-full pointer-events-none"
@@ -213,6 +212,20 @@ const Hero: React.FC = () => {
             <line x1="1120" y1="0" x2="1120" y2="430" />
           </g>
 
+          {/* Centroid */}
+          <text x="1120" y="260" textAnchor="middle" fontFamily="serif" fontStyle="italic" fontSize="11" fill="rgba(201,169,98,0.35)" letterSpacing="0.3">centroid</text>
+          <circle cx="1120" cy="253" r="1" fill="rgba(201,169,98,0.5)" />
+        </svg>
+      </motion.div>
+
+      {/* Vertex dots, halos & labels — above title so they stay visible when they brighten */}
+      <motion.div style={{ opacity, y }} className="hidden md:block absolute inset-0 z-30 pointer-events-none">
+        <svg
+          ref={svgRef}
+          viewBox="0 0 1600 540"
+          preserveAspectRatio="xMaxYMid slice"
+          className="absolute inset-0 w-full h-full pointer-events-none"
+        >
           {/* NATIONS */}
           <g>
             <circle id="p1-halo" cx="820" cy="120" r="28" fill="none" stroke="rgba(201,169,98,0.25)" strokeWidth="0.5" />
@@ -245,10 +258,6 @@ const Hero: React.FC = () => {
             <text id="p3-label" x="1120" y="458" textAnchor="middle" fontFamily="JetBrains Mono, ui-monospace, monospace" fontSize="10" fill="#c9a962" letterSpacing="2.5" opacity="0.75">CONTRACTORS</text>
             <text x="1120" y="472" textAnchor="middle" fontFamily="JetBrains Mono, ui-monospace, monospace" fontSize="6.5" fill="rgba(201,169,98,0.4)" letterSpacing="1.5">S 37° 06&apos; W</text>
           </g>
-
-          {/* Centroid */}
-          <text x="1120" y="260" textAnchor="middle" fontFamily="serif" fontStyle="italic" fontSize="11" fill="rgba(201,169,98,0.35)" letterSpacing="0.3">centroid</text>
-          <circle cx="1120" cy="253" r="1" fill="rgba(201,169,98,0.5)" />
         </svg>
       </motion.div>
 
