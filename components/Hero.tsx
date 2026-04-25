@@ -237,8 +237,8 @@ const Hero: React.FC = () => {
             <line x1="812" y1="120" x2="828" y2="120" stroke="#c9a962" strokeWidth="0.8" opacity="0.5" />
             <line x1="820" y1="112" x2="820" y2="128" stroke="#c9a962" strokeWidth="0.8" opacity="0.5" />
             <circle id="p1-dot" cx="820" cy="120" r="1.6" fill="#c9a962" />
-            <text id="p1-label" x="820" y="95" textAnchor="middle" fontFamily="JetBrains Mono, ui-monospace, monospace" fontSize="10" fill="#c9a962" letterSpacing="2.5" opacity="0.5">NATIONS</text>
-            <text x="820" y="82" textAnchor="middle" fontFamily="JetBrains Mono, ui-monospace, monospace" fontSize="6.5" fill="rgba(201,169,98,0.28)" letterSpacing="1.5">N 54° 12&apos; W</text>
+            <text id="p1-label" x="820" y="148" textAnchor="middle" fontFamily="JetBrains Mono, ui-monospace, monospace" fontSize="10" fill="#c9a962" letterSpacing="2.5" opacity="0.5">NATIONS</text>
+            <text x="820" y="162" textAnchor="middle" fontFamily="JetBrains Mono, ui-monospace, monospace" fontSize="6.5" fill="rgba(201,169,98,0.28)" letterSpacing="1.5">N 54° 12&apos; W</text>
           </g>
 
           {/* OWNERS */}
