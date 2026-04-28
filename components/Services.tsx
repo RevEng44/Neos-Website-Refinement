@@ -118,9 +118,7 @@ const Services: React.FC = () => {
     <section id="services" className="bg-navy relative z-10 py-24 md:py-32 overflow-hidden">
       {/* Background ambience */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.03]" />
         <div className="absolute -top-[10%] right-[20%] w-[700px] h-[700px] bg-gold/5 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] left-[5%] w-[600px] h-[600px] bg-navy-light/40 rounded-full blur-[100px]" />
       </div>
 
       <div className="relative max-w-[1400px] mx-auto px-6 md:px-12">
@@ -133,10 +131,10 @@ const Services: React.FC = () => {
           </div>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white leading-[1.1] mb-6">
             Two divisions.{' '}
-            <span className="italic text-white/50">One standard.</span>
+            <span className="italic text-white/50">One way to build.</span>
           </h2>
-          <p className="text-white/60 text-lg md:text-xl leading-relaxed">
-            Our two divisions deliver comprehensive services to meet every client need.
+          <p className="text-white/75 text-lg md:text-xl leading-relaxed">
+            Two teams working side by side, covering every stage of a major project from first conversation to final delivery.
           </p>
         </div>
 
@@ -149,7 +147,7 @@ const Services: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="group relative rounded-3xl bg-navy-light/30 border border-white/10 hover:border-gold/45 backdrop-blur-xl overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-gold/5"
+              className="group relative rounded-xl bg-navy-light/30 border border-white/10 hover:border-gold/45 backdrop-blur-xl overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-gold/5"
             >
               {/* Glossy overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/[0.04] to-transparent pointer-events-none" />
@@ -157,7 +155,7 @@ const Services: React.FC = () => {
               <div className="relative p-8 md:p-10 lg:p-12">
                 {/* Top row: crosshair */}
                 <div className="flex items-start justify-end mb-8">
-                  <div className="transition-transform duration-500 ease-out group-hover:rotate-45">
+                  <div className="transition-opacity duration-500 ease-out opacity-60 group-hover:opacity-100">
                     <Crosshair />
                   </div>
                 </div>
@@ -198,7 +196,7 @@ const Services: React.FC = () => {
                         <h4 className="font-semibold text-white text-base md:text-lg mb-1">
                           {sub.title}
                         </h4>
-                        <p className="text-white/55 text-sm md:text-base leading-relaxed">
+                        <p className="text-white/70 text-sm md:text-base leading-relaxed">
                           {sub.desc}
                         </p>
                       </div>

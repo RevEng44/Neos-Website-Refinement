@@ -55,7 +55,7 @@ const Contact: React.FC = () => {
                 <Mail size={20} />
               </div>
               <div>
-                <p className="text-xs font-bold uppercase tracking-widest text-navy/40 mb-1">Email</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-navy/55 mb-1">Email</p>
                 <a href="mailto:info@neosadvisors.ca" className="text-navy hover:text-gold-dark transition-colors">info@neosadvisors.ca</a>
               </div>
             </div>
@@ -77,7 +77,7 @@ const Contact: React.FC = () => {
                 <Check size={32} className="text-gold-dark" />
               </div>
               <h3 className="font-serif text-2xl text-navy mb-3">Message Received</h3>
-              <p className="text-navy-light/70 text-base leading-relaxed max-w-sm">
+              <p className="text-navy-light/80 text-base leading-relaxed max-w-sm">
                 Thank you for reaching out. A member of our team will review your inquiry and be in touch.
               </p>
             </div>

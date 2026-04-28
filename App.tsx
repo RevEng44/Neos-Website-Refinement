@@ -1,8 +1,7 @@
 
-import React, { useState, useEffect } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import React from 'react';
 import Header from './components/Header';
-import Hero from './components/Hero';
+import HeroAtelier from './components/HeroAtelier';
 import About from './components/About';
 import Services from './components/Services';
 import Indigenous from './components/Indigenous';
@@ -12,48 +11,29 @@ import Team from './components/Team';
 import Careers from './components/Careers';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import Loader from './components/Loader';
+import MobileStickyCTA from './components/MobileStickyCTA';
 
 const App: React.FC = () => {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate asset loading
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2500);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
-    <>
-      <AnimatePresence mode="wait">
-        {loading && <Loader key="loader" />}
-      </AnimatePresence>
-
-      {!loading && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="relative w-full"
-        >
-          <Header />
-          <main>
-            <Hero />
-            <About />
-            <Clients />
-            <Contact />
-            <Services />
-            <Indigenous />
-            <CaseStudy />
-            <Team />
-            <Careers />
-          </main>
-          <Footer />
-        </motion.div>
-      )}
-    </>
+    <div className="relative w-full">
+      <Header />
+      <main>
+        <HeroAtelier />
+        {/* All sections below the hero paint above the fixed Atelier background */}
+        <div className="relative z-10 isolate bg-navy">
+          <About />
+          <Clients />
+          <Contact />
+          <Services />
+          <Indigenous />
+          <CaseStudy />
+          <Team />
+          <Careers />
+        </div>
+      </main>
+      <Footer />
+      <MobileStickyCTA />
+    </div>
   );
 };
 

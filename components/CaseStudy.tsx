@@ -4,14 +4,17 @@ import { motion } from 'framer-motion';
 
 const CaseStudy: React.FC = () => {
   return (
-    <section id="case-study" className="py-16 md:py-24 bg-white text-navy">
+    <section id="case-study" className="py-24 md:py-32 bg-white text-navy">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="mb-10 md:mb-16">
-          <span className="text-gold-dark tracking-[0.2em] text-sm font-bold uppercase">Featured Results</span>
+          <div className="inline-flex items-center gap-3">
+            <span className="w-8 h-px bg-gold/50" />
+            <span className="text-gold-dark tracking-[0.2em] text-sm font-bold uppercase">Featured Results</span>
+          </div>
           <h2 className="font-serif text-3xl md:text-5xl mt-4">Delivering Measurable Impact</h2>
         </div>
 
-        <div className="relative rounded-2xl bg-navy overflow-hidden text-white shadow-2xl">
+        <div className="relative rounded-xl bg-navy overflow-hidden text-white shadow-2xl">
           <div className="grid lg:grid-cols-2">
             <div className="relative h-[250px] md:h-[400px] lg:h-auto">
               <img 
@@ -38,15 +41,15 @@ const CaseStudy: React.FC = () => {
               <div className="flex flex-wrap gap-8 md:gap-12 mb-8 md:mb-10 border-b border-white/10 pb-8 md:pb-10">
                 <div>
                   <div className="font-serif text-3xl md:text-5xl text-gold mb-1">100×</div>
-                  <div className="text-white/60 text-xs md:text-sm">Revenue Growth</div>
+                  <div className="text-white/75 text-xs md:text-sm">Revenue Growth</div>
                 </div>
                 <div>
                   <div className="font-serif text-3xl md:text-5xl text-gold mb-1">98%</div>
-                  <div className="text-white/60 text-xs md:text-sm">Tender Success</div>
+                  <div className="text-white/75 text-xs md:text-sm">Tender Success</div>
                 </div>
                 <div>
                   <div className="font-serif text-3xl md:text-5xl text-gold mb-1">50+</div>
-                  <div className="text-white/60 text-xs md:text-sm">Tenders Supported</div>
+                  <div className="text-white/75 text-xs md:text-sm">Tenders Supported</div>
                 </div>
               </div>
 

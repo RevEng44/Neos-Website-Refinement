@@ -13,7 +13,10 @@ const About: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <span className="text-gold-dark tracking-[0.2em] text-sm font-bold uppercase block mb-4">About Neos</span>
+          <div className="inline-flex items-center gap-3 mb-4">
+            <span className="w-8 h-px bg-gold/50" />
+            <span className="text-gold-dark tracking-[0.2em] text-sm font-bold uppercase">About Neos</span>
+          </div>
 
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium mb-8 leading-tight">
             Strategic partners for <br /><span className="text-gold-dark italic">every project phase</span>
@@ -21,10 +24,10 @@ const About: React.FC = () => {
 
           <div className="space-y-6 text-lg text-navy-light/80 leading-relaxed">
             <p>
-              At Neos Advisors, we bring clarity, strategy, and direct field experience to every project. As a Canadian advisory and project management firm, we support First Nations and construction businesses navigating large-scale infrastructure work.
+              Neos brings clarity, strategy, and field experience to every project. We work alongside First Nations and construction businesses on large-scale infrastructure across Canada, bringing the relationships and on-the-ground know-how to make ambitious work happen.
             </p>
             <p>
-              Whether you're planning capacity, negotiating commercial terms, or building long-term partnerships, Neos delivers the practical expertise to move projects forward.
+              Whether you're planning capacity, structuring agreements, or building long-term partnerships, we bring the practical experience to move work forward.
             </p>
           </div>
         </motion.div>
@@ -36,12 +39,11 @@ const About: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="relative"
         >
-          <div className="absolute inset-0 bg-gold transform translate-x-4 translate-y-4 rounded-lg" />
-          <div className="relative rounded-lg overflow-hidden h-[320px] md:h-[500px] lg:h-[600px] shadow-2xl">
+          <div className="relative rounded-xl overflow-hidden h-[320px] md:h-[500px] lg:h-[600px] shadow-2xl">
             <img
               src="/images/about.png"
               alt="Strategic Planning"
-              className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
             />
             <div className="absolute inset-0 bg-navy/10 hover:bg-transparent transition-colors duration-500" />
           </div>

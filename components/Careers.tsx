@@ -70,7 +70,7 @@ const Careers: React.FC = () => {
                   <Check size={32} className="text-gold" />
                 </div>
                 <h3 className="font-serif text-2xl text-white mb-3">Application Received</h3>
-                <p className="text-white/60 text-base leading-relaxed max-w-sm">
+                <p className="text-white/75 text-base leading-relaxed max-w-sm">
                   Thank you for your interest in Neos Advisors. Our team will review your application and be in touch.
                 </p>
               </div>
