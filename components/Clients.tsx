@@ -25,7 +25,6 @@ const partners: Partner[] = [
   { name: "Secwepemcul'ecw Restoration and Stewardship Society", logo: "/images/secwepemc.png", url: "https://srssociety.com/", scale: 1.0 },
   { name: "3-D Line Locating", logo: "/images/3-d-line-locating.png", scale: 1.1 },
   { name: "High Bar First Nation", logo: "/images/hbfn.png", scale: 1.5 },
-  { name: "GNB", logo: "/images/gnb.png", scale: 1.0 },
 ];
 
 const Clients: React.FC = () => {

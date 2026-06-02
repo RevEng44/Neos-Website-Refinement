@@ -126,6 +126,8 @@ const Careers: React.FC = () => {
                       className="w-full bg-navy/50 border border-white/10 rounded p-3 text-white focus:border-gold focus:outline-none transition-colors"
                     >
                       <option>Project Management</option>
+                      <option>Project Coordinator</option>
+                      <option>Project Administrator</option>
                       <option>Project Controls</option>
                       <option>Construction Management</option>
                       <option>Commercial Advisory</option>

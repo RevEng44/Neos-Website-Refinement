@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>OG Image Template</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@500&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
+<style>
+  *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:1200px; height:630px; overflow:hidden; background:#0a1628; color:#fff; font-family:'DM Sans', sans-serif; -webkit-font-smoothing:antialiased; }
+  .stage { position:relative; width:1200px; height:630px; overflow:hidden; }
+  .bg {
+    position:absolute; inset:0;
+    background-image: url('/images/heri-atelier.png');
+    background-size: cover;
+    background-position: center;
+    filter: saturate(0.55) brightness(0.45) contrast(1.05);
+  }
+  .overlay {
+    position:absolute; inset:0;
+    background: linear-gradient(to top, rgba(10,22,40,0.92) 0%, rgba(10,22,40,0.55) 55%, rgba(10,22,40,0.25) 100%);
+  }
+  .content {
+    position:relative; z-index:10;
+    padding: 64px 80px;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+  }
+  .top {
+    display:flex;
+    align-items:center;
+    gap: 22px;
+  }
+  .top .rule { width: 60px; height:1px; background:rgba(201,169,98,0.7); }
+  .top .neos { color:#c9a962; letter-spacing:0.42em; font-size:16px; font-weight:600; text-transform:uppercase; }
+  .top .adj { color:rgba(201,169,98,0.55); font-family:'Playfair Display', serif; font-style:italic; font-size:22px; }
+
+  .head h1 {
+    font-family:'Playfair Display', serif;
+    font-weight:400;
+    font-size:120px;
+    line-height:0.95;
+    letter-spacing:-0.04em;
+    color:#fff;
+  }
+  .head h1 em {
+    font-style:italic;
+    color:#c9a962;
+    display:block;
+  }
+
+  .footer {
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    border-top:1px solid rgba(201,169,98,0.35);
+    padding-top:22px;
+  }
+  .footer .left {
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px;
+    color:rgba(255,255,255,0.55);
+    letter-spacing:0.32em;
+    text-transform:uppercase;
+  }
+  .footer .right {
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px;
+    color:#c9a962;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    font-weight:500;
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="bg"></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="top">
+      <div class="rule"></div>
+      <div class="neos">Neos Advisors</div>
+      <div class="adj">adj. new</div>
+    </div>
+    <div class="head">
+      <h1>Partner early.<em>Build better.</em></h1>
+    </div>
+    <div class="footer">
+      <div class="left">Nations · Contractors · Owners · Major infrastructure across Canada</div>
+      <div class="right">neosadvisors.com</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
