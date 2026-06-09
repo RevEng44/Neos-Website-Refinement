@@ -1,31 +1,27 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 
 const Careers: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  // Tracks whether the user has actually submitted, so the hidden iframe's
+  // initial mount load doesn't trigger the success state prematurely.
+  const didSubmit = useRef(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  // NOTE: FormSubmit's AJAX endpoint (/ajax/) silently drops file uploads.
+  // To deliver the resume attachment we must do a native multipart/form-data
+  // POST to the standard endpoint. We target a hidden iframe so the page
+  // doesn't navigate away and we can keep the in-page success state.
+  const handleSubmit = () => {
+    didSubmit.current = true;
     setSubmitting(true);
+  };
 
-    const form = e.currentTarget;
-    const data = new FormData(form);
-
-    try {
-      await fetch('https://formsubmit.co/ajax/careers@neosadvisors.ca', {
-        method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: data,
-      });
-      setSubmitted(true);
-    } catch {
-      // Fallback if fetch fails
-      alert('Something went wrong. Please try again or email us directly at careers@neosadvisors.ca');
-    } finally {
-      setSubmitting(false);
-    }
+  const handleIframeLoad = () => {
+    if (!didSubmit.current) return;
+    setSubmitting(false);
+    setSubmitted(true);
   };
 
   const benefits = [
@@ -39,6 +35,14 @@ const Careers: React.FC = () => {
 
   return (
     <section id="careers" className="py-24 bg-navy-light relative overflow-hidden">
+      {/* Hidden target for the native form POST so the page doesn't navigate
+          away on submit. FormSubmit returns its confirmation page here. */}
+      <iframe
+        name="formsubmit-iframe"
+        title="form submission target"
+        onLoad={handleIframeLoad}
+        style={{ display: 'none' }}
+      />
       <div className="absolute inset-0 opacity-20">
         <img src="/images/careers.png" className="w-full h-full object-cover" alt="Helicopter Operations" />
       </div>
@@ -79,10 +83,18 @@ const Careers: React.FC = () => {
                 <h3 className="font-serif text-2xl text-white mb-2">Apply Now</h3>
                 <p className="text-white/50 text-sm mb-8">Submit your application and join our team.</p>
 
-                <form onSubmit={handleSubmit} className="space-y-4" encType="multipart/form-data">
+                <form
+                  action="https://formsubmit.co/careers@neosadvisors.ca"
+                  method="POST"
+                  encType="multipart/form-data"
+                  target="formsubmit-iframe"
+                  onSubmit={handleSubmit}
+                  className="space-y-4"
+                >
                   {/* FormSubmit config */}
                   <input type="hidden" name="_subject" value="New Career Application - Neos Advisors" />
                   <input type="hidden" name="_template" value="table" />
+                  <input type="hidden" name="_captcha" value="false" />
                   <input type="text" name="_honey" style={{ display: 'none' }} />
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
