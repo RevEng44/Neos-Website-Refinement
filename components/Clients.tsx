@@ -19,7 +19,6 @@ const partners: Partner[] = [
   { name: "Enbridge", logo: "/images/enbridge.png", scale: 1.3 },
   { name: "ATS", logo: "/images/ats.png", scale: 1.0 },
   { name: "Simpcw Resources Group", logo: "/images/simpcw.png", url: "https://simpcwresourcesgroup.com/", scale: 1.05 },
-  { name: "Cooper Rentals", logo: "/images/cooper.jpg", scale: 1.1 },
   { name: "Spirit Valley Development LP", logo: "/images/spirit-valley.png", url: "https://www.spiritvalley.ca/", scale: 1.3 },
   { name: "DDR / Defender DR", logo: "/images/ddr.png", url: "https://defenderdr.com/", scale: 1.05 },
   { name: "Secwepemcul'ecw Restoration and Stewardship Society", logo: "/images/secwepemc.png", url: "https://srssociety.com/", scale: 1.0 },
