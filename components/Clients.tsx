@@ -16,14 +16,15 @@ type Partner = { name: string; logo: string; url?: string; scale?: number };
 // Mixed order so Nations, contractors, and end-clients visually alternate as the row scrolls.
 const partners: Partner[] = [
   { name: "Duz Cho", logo: "/images/duzcho.png", url: "https://duzcho.com/", scale: 1.0 },
-  { name: "Enbridge", logo: "/images/enbridge.png", scale: 1.3 },
-  { name: "ATS", logo: "/images/ats.png", scale: 1.0 },
+  { name: "Enbridge", logo: "/images/enbridge.png", url: "https://www.enbridge.com/", scale: 1.3 },
+  { name: "ATS", logo: "/images/ats.png", url: "https://www.atstraffic.ca/", scale: 1.0 },
   { name: "Simpcw Resources Group", logo: "/images/simpcw.png", url: "https://simpcwresourcesgroup.com/", scale: 1.05 },
   { name: "Spirit Valley Development LP", logo: "/images/spirit-valley.png", url: "https://www.spiritvalley.ca/", scale: 1.3 },
   { name: "DDR / Defender DR", logo: "/images/ddr.png", url: "https://defenderdr.com/", scale: 1.05 },
   { name: "Secwepemcul'ecw Restoration and Stewardship Society", logo: "/images/secwepemc.png", url: "https://srssociety.com/", scale: 1.0 },
-  { name: "3-D Line Locating", logo: "/images/3-d-line-locating.png", scale: 1.1 },
-  { name: "High Bar First Nation", logo: "/images/hbfn.png", scale: 1.5 },
+  { name: "3-D Line Locating", logo: "/images/3-d-line-locating.png", url: "https://3-dlinelocating.com/", scale: 1.1 },
+  { name: "Connexa Group", logo: "/images/connexa.png", url: "https://connexa.ca/", scale: 1.05 },
+  { name: "High Bar First Nation", logo: "/images/hbfn.png", url: "https://www.highbarfirstnation.ca/", scale: 1.5 },
 ];
 
 const Clients: React.FC = () => {
