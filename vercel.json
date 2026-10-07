@@ -26,14 +26,14 @@
   ],
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [
         {
           "type": "host",
           "value": "www.neosadvisors.com"
         }
       ],
-      "destination": "https://neosadvisors.com/:path*",
+      "destination": "https://neosadvisors.com/$1",
       "permanent": true
     }
   ]
