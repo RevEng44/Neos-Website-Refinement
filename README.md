@@ -1,20 +1,9 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Neos Advisors website
 
-# Run and deploy your AI Studio app
+The public site at https://neosadvisors.com. Static files: open `index.html` on any web server; there is no build
+step and nothing to install. `vercel.json` sets the security headers and the redirect from www to the main
+address. A push to `main` deploys to production on Vercel.
 
-This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/drive/1tGcNi3hG2vKxkJ2yFc27d9NO8flNwn6G
-
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+The site is edited in the Neos Advisors Dropbox (`06_Branding/Website`): the source folder is rebuilt into the
+launch copy by `_tools/production/build-live.js`, and that launch copy is what this repository holds. Make
+changes there, rebuild, and copy the result here, so that the repository and the site always match.
