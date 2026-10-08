@@ -4,6 +4,11 @@
    The forms are in forms.js. The smooth scroll, the video controls and the section motion are in
    shell.js. Merged on 2026-09-30 from app.js, feedback.js, premium.js and work-expanded.js. */
 
+/* ---------- Icons ---------- */
+// Drawn inline so they look the same on every system (the arrow and pause characters fall back to an emoji font on some).
+const ICON_PAUSE = '<svg class="icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M5.5 3v10M10.5 3v10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+const ICON_PLAY = '<svg class="icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M5 3.2v9.6L12.5 8z" fill="currentColor"/></svg>';
+
 /* ---------- Header and phone menu ---------- */
 const header = document.querySelector('.site-header');
 const nav = document.querySelector('#main-nav');
@@ -109,7 +114,7 @@ if (partnerRail) {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (motionControl) {
     if (reducedMotion.matches) { partnerRail.classList.add('is-paused'); motionControl.textContent = 'Motion off'; motionControl.disabled = true; motionControl.setAttribute('aria-label', 'Logo motion is off according to your device preference'); }
-    motionControl.addEventListener('click', () => { const paused = partnerRail.classList.toggle('is-paused'); motionControl.setAttribute('aria-pressed', String(paused)); motionControl.setAttribute('aria-label', paused ? 'Resume partner logo scrolling' : 'Pause partner logo scrolling'); motionControl.textContent = paused ? 'Play ▷' : 'Pause Ⅱ'; });
+    motionControl.addEventListener('click', () => { const paused = partnerRail.classList.toggle('is-paused'); motionControl.setAttribute('aria-pressed', String(paused)); motionControl.setAttribute('aria-label', paused ? 'Resume partner logo scrolling' : 'Pause partner logo scrolling'); motionControl.innerHTML = paused ? 'Play <span aria-hidden="true">' + ICON_PLAY + '</span>' : 'Pause <span aria-hidden="true">' + ICON_PAUSE + '</span>'; });
   }
 }
 
@@ -130,7 +135,7 @@ if (projectRows && !window.matchMedia('(prefers-reduced-motion: reduce)').matche
   const projectControl = document.querySelector('#project-motion');
   if (projectControl) {
     projectControl.hidden = false;
-    projectControl.addEventListener('click', () => { const paused = projectRows.classList.toggle('is-paused'); projectControl.setAttribute('aria-pressed', String(paused)); projectControl.setAttribute('aria-label', paused ? 'Resume the project names' : 'Pause the project names'); projectControl.textContent = paused ? 'Play ▷' : 'Pause Ⅱ'; });
+    projectControl.addEventListener('click', () => { const paused = projectRows.classList.toggle('is-paused'); projectControl.setAttribute('aria-pressed', String(paused)); projectControl.setAttribute('aria-label', paused ? 'Resume the project names' : 'Pause the project names'); projectControl.innerHTML = paused ? 'Play <span aria-hidden="true">' + ICON_PLAY + '</span>' : 'Pause <span aria-hidden="true">' + ICON_PAUSE + '</span>'; });
   }
 }
 

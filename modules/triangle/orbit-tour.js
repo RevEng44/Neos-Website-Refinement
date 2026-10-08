@@ -466,7 +466,9 @@ export function mount(panel) {
     toggle.append(document.createTextNode(paused ? 'Play ' : 'Pause '));
     const icon = document.createElement('span');
     icon.setAttribute('aria-hidden', 'true');
-    icon.textContent = paused ? '▷' : 'Ⅱ';
+    icon.innerHTML = paused
+      ? '<svg class="icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M5 3.2v9.6L12.5 8z" fill="currentColor"/></svg>'
+      : '<svg class="icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M5.5 3v10M10.5 3v10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
     toggle.append(icon);
     toggle.setAttribute('aria-label', paused ? 'Play the participant tour' : 'Pause the participant tour');
   }
